@@ -1,0 +1,8 @@
+D:\DOWN\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\bin\Debug\Gestiune-Venituri-Si-Cheltuieli.exe.config
+D:\DOWN\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\bin\Debug\Gestiune-Venituri-Si-Cheltuieli.exe
+D:\DOWN\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\bin\Debug\Gestiune-Venituri-Si-Cheltuieli.pdb
+D:\DOWN\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\obj\Debug\Gestiune-Venituri-Si-Cheltuieli.csproj.AssemblyReference.cache
+D:\DOWN\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\obj\Debug\Gestiune-Venituri-Si-Cheltuieli.csproj.SuggestedBindingRedirects.cache
+D:\DOWN\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\obj\Debug\Gestiune-Venituri-Si-Cheltuieli.csproj.CoreCompileInputs.cache
+D:\DOWN\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\obj\Debug\Gestiune-Venituri-Si-Cheltuieli.exe
+D:\DOWN\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\obj\Debug\Gestiune-Venituri-Si-Cheltuieli.pdb
