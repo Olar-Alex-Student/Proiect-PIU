@@ -10,7 +10,10 @@ namespace Gestiune_Venituri_Si_Cheltuieli
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Test");
+            Balanta balanta = new Balanta(100);
+            float myBalanta = balanta.retBalanta();
+            Console.WriteLine("Balanta mea este {0}.",myBalanta);
+            Console.ReadKey();
         }
     }
 }
