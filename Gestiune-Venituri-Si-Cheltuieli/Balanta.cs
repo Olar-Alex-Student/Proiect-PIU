@@ -8,25 +8,34 @@ namespace Gestiune_Venituri_Si_Cheltuieli
 {
     internal class Balanta
     {
-        private float suma;
+        float suma;
         public Balanta()
         {
             suma = 0;
         }
 
-        public Balanta(float _sum)
+        public Balanta(string _sum)
         {
-            suma = _sum;
+            float sum = float.Parse(_sum);
+            suma = sum;
         }
 
-        void addBalanta(float _add)
+        public void addBalanta(string _add)
         {
-            suma += _add;
+            float add = float.Parse(_add);
+            suma += add;
         }
 
-        void subBalanta(float _sub)
+        public void subBalanta(string _sub)
         {
-            suma -= _sub;
+            float sub = float.Parse(_sub);
+            suma -= sub;
+        }
+
+        public string retBalantaString()
+        {
+            string cont = suma.ToString();
+            return cont;
         }
 
         public float retBalanta()

@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Gestiune-Venituri-Si-Cheltuieli",
+    "\\Gestiune-Venituri-Si-Cheltuieli\\obj\\Debug\\TempPE"
   ],
+  "SelectedNode": "\\Gestiune-Venituri-Si-Cheltuieli\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
