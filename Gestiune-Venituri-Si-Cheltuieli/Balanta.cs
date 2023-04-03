@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,17 @@ namespace Gestiune_Venituri_Si_Cheltuieli
         public float retBalanta()
         {
             return suma;
+        }
+
+        public void introducereFisier(string fisier, string retBalantaString)
+        {
+            File.WriteAllText(fisier, retBalantaString);
+        }
+
+        public void extragereFisier(string fisier)
+        {
+            string continut = File.ReadAllText(fisier);
+            Console.WriteLine(continut);
         }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,8 +12,11 @@ namespace Gestiune_Venituri_Si_Cheltuieli
 {
     internal class Program
     {
+ 
         static void Main(string[] args)
         {
+            const string fisier = "D:\\DOWN\\Proiect - PIU\\Gestiune - Venituri - Si - Cheltuieli\\TextFile1.txt";
+
             Balanta balanta = new Balanta();
 
             string optiune;
@@ -22,6 +26,8 @@ namespace Gestiune_Venituri_Si_Cheltuieli
                 Console.WriteLine("A. Afisati Suma Cont");
                 Console.WriteLine("V. Adaugati Venit");
                 Console.WriteLine("C. Adaugati Cheltuieli");
+                Console.WriteLine("S. Salveaza suma din cont in fisier");
+                Console.WriteLine("F. Vizualizeaza suma din cont salvata in fisier");
                 Console.WriteLine("X. Inchidere program");
                 Console.WriteLine("Alegeti o optiune");
 
@@ -31,8 +37,7 @@ namespace Gestiune_Venituri_Si_Cheltuieli
                 {
                     case "A":
                         string cont = balanta.retBalantaString();
-                        float cont1 = balanta.retBalanta();
-                        Console.WriteLine("Balanta ta este: {0}", cont1);
+                        Console.WriteLine("Balanta ta este: {0}", cont);
                         break;
                     case "V":
                         Console.WriteLine("Scrie val pt. a adauga la venit.");
@@ -43,6 +48,12 @@ namespace Gestiune_Venituri_Si_Cheltuieli
                         Console.WriteLine("Scrie val pt. a scadea din venit.");
                         string _sub = Console.ReadLine();
                         balanta.subBalanta(_sub);
+                        break;
+                    case "S":
+                        balanta.introducereFisier(fisier, balanta.retBalantaString());
+                        break;
+                    case "F":
+                        balanta.extragereFisier(fisier);
                         break;
                     case "X":
                         return;
