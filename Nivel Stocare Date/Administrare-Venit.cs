@@ -33,14 +33,11 @@ namespace Nivel_Stocare_Date
         {
             Cont[] conturi = new Cont[NR_MAX_CONTURI];
 
-            // instructiunea 'using' va apela streamReader.Close()
             using (StreamReader streamReader = new StreamReader(numeFisier))
             {
                 string linieFisier;
                 nrConturi = 0;
 
-                // citeste cate o linie si creaza un obiect de tip Student
-                // pe baza datelor din linia citita
                 while ((linieFisier = streamReader.ReadLine()) != null)
                 {
                     conturi[nrConturi++] = new Cont(linieFisier);

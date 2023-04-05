@@ -19,8 +19,18 @@ namespace Cont_Utilizator
 
         float[] suma;
 
-        private float sumaCont { get; set; }
-        private string numeCont { get; set; }
+        private float sumaCont;
+        private string numeCont;
+        public float SumaCont 
+        { 
+          get { return sumaCont; }
+          set { sumaCont = value; }
+        }
+        public string NumeCont 
+        {
+          get { return numeCont; }
+          set { numeCont = value; }
+        }
 
         public Cont()
         {
@@ -34,34 +44,20 @@ namespace Cont_Utilizator
             this.numeCont = numeCont;
         }
 
-        public string GetNumeCont()
+        public void AddSumaCont()
         {
-            return numeCont;
+            Console.WriteLine("Scrie valoarea pe care vrei sa o adaugi in cont:");
+            string text = Console.ReadLine();
+            float add = float.Parse(text);
+            SumaCont += add;
         }
 
-        public void SetNumeCont(string numeCont)
+        public void SubSumaCont()
         {
-            this.numeCont = numeCont;
-        }
-
-        public float GetSumaCont()
-        {
-            return sumaCont;
-        }
-
-        public void SetSumaCont(float sumaCont)
-        {
-            this.sumaCont = sumaCont;
-        }
-
-        public void AddSumaCont(float add)
-        {
-            this.sumaCont += add;
-        }
-
-        public void SubSumaCont(float sub)
-        {
-            this.sumaCont -= sub;
+            Console.WriteLine("Scrie valoarea pe care vrei sa o cheltui din cont:");
+            string text = Console.ReadLine();
+            float sub = float.Parse(text);
+            SumaCont -= sub;
         }
 
         private bool ValideazaSuma(float suma)

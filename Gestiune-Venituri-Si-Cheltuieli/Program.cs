@@ -32,6 +32,8 @@ namespace Gestiune_Venituri_Si_Cheltuieli
             {
                 Console.WriteLine("I. Introdu informatii cont");
                 Console.WriteLine("A. Afisare ultimul cont introdus");
+                Console.WriteLine("V. Adauga venit la suma din cont");
+                Console.WriteLine("C. Cheltuieste din suma din cont");
                 Console.WriteLine("F. Afisati conturi din fisier");
                 Console.WriteLine("S. Salveaza cont in fisier");
                 Console.WriteLine("X. Inchidere program");
@@ -55,6 +57,12 @@ namespace Gestiune_Venituri_Si_Cheltuieli
                     case "F":
                         Cont[] conturi = adminConturi.GetConturi(out nrConturi);
                         AfisareConturi(conturi, nrConturi);
+                        break;
+                    case "V":
+                        cont.AddSumaCont();
+                        break;
+                    case "C":
+                        cont.SubSumaCont();
                         break;
                     case "X":
                         return;
@@ -84,16 +92,16 @@ namespace Gestiune_Venituri_Si_Cheltuieli
 
         public static void AfisareCont(Cont cont)
         {
-            string infoCont = string.Format("Contul cu suma {0} are numele: {1}",
-                    cont.GetNumeCont() ?? " NECUNOSCUT ",
-                    string.Join(",", cont.GetSumaCont()));
+            string infoCont = string.Format("Contul cu numele: {0} are suma de: {1}",
+                    cont.NumeCont ?? " NECUNOSCUT ",
+                    string.Join(",", cont.SumaCont));
 
             Console.WriteLine(infoCont);
         }
 
         public static void AfisareConturi(Cont[] conturi, int nrConturi)
         {
-            Console.WriteLine("Studentii sunt:");
+            Console.WriteLine("Conturile sunt:");
             for (int contor = 0; contor < nrConturi; contor++)
             {
                 AfisareCont(conturi[contor]);
