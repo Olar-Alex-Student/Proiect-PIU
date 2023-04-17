@@ -1,0 +1,19 @@
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\InterfataUtilizator_WindowsForms.exe.config
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\InterfataUtilizator_WindowsForms.exe
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\InterfataUtilizator_WindowsForms.pdb
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\Cont Utilizator.dll
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\Gestiune-Venituri-Si-Cheltuieli.exe
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\Nivel Stocare Date.dll
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\Cont Utilizator.pdb
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\Gestiune-Venituri-Si-Cheltuieli.pdb
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\Gestiune-Venituri-Si-Cheltuieli.exe.config
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\Nivel Stocare Date.pdb
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.csproj.AssemblyReference.cache
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.csproj.SuggestedBindingRedirects.cache
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.Form1.resources
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.Properties.Resources.resources
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.csproj.GenerateResource.cache
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.csproj.CoreCompileInputs.cache
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.csproj.CopyComplete
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.exe
+D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.pdb

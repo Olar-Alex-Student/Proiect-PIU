@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cont Utilizator", "..\Cont 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nivel Stocare Date", "..\Nivel Stocare Date\Nivel Stocare Date.csproj", "{EEFACE23-F74F-404B-857E-F5E713F47558}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterfataUtilizator_WindowsForms", "..\InterfataUtilizator_WindowsForms\InterfataUtilizator_WindowsForms.csproj", "{65A7F446-597C-4EF3-BF86-D73BFFA3BD43}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{EEFACE23-F74F-404B-857E-F5E713F47558}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EEFACE23-F74F-404B-857E-F5E713F47558}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EEFACE23-F74F-404B-857E-F5E713F47558}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65A7F446-597C-4EF3-BF86-D73BFFA3BD43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65A7F446-597C-4EF3-BF86-D73BFFA3BD43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65A7F446-597C-4EF3-BF86-D73BFFA3BD43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65A7F446-597C-4EF3-BF86-D73BFFA3BD43}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
