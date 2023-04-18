@@ -7,11 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
-using Nivel_Stocare_Date;
 using Cont_Utilizator;
-using System.IO;
+using Nivel_Stocare_Date;
+using System.Collections.Generic;
 using System.Configuration;
+using System.IO;
 
 namespace InterfataUtilizator_WindowsForms
 {
@@ -20,27 +20,20 @@ namespace InterfataUtilizator_WindowsForms
         public Form1()
         {
             InitializeComponent();
-            string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
+            string NumeFisier = ConfigurationManager.AppSettings["NumeFisier"];
             string locatieFisierSolutie =
             Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
             // setare locatie fisier in directorul corespunzator solutiei
             // astfel incat datele din fisier sa poata fi utilizate si de alte proiecte
-            string caleCompletaFisier = locatieFisierSolutie + "\\" + numeFisier;
+            string caleCompletaFisier = locatieFisierSolutie + "\\" + NumeFisier;
             AdministrareVenit_FisierText adminConturi = new
             AdministrareVenit_FisierText(caleCompletaFisier);
             int nrConturi = 0;
             Cont[] conturi = adminConturi.GetConturi(out nrConturi);
-            lblNume.Text = "Merge";
-            lblSuma.Text = "Merge";
-            lblTitlu.Text = "Merge";
+            //lblNume.Text = conturi[nrConturi].NumeCont;
         }
 
         private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
         {
 
         }

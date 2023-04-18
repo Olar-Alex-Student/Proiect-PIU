@@ -12,12 +12,12 @@ namespace Nivel_Stocare_Date
     public class AdministrareVenit_FisierText
     {
         private const int NR_MAX_CONTURI = 50;
-        private string numeFisier;
+        private string NumeFisier;
 
-        public AdministrareVenit_FisierText(string numeFisier)
+        public AdministrareVenit_FisierText(string NumeFisier)
         {
-            this.numeFisier = numeFisier;
-            Stream streamFisierText = File.Open(numeFisier, FileMode.OpenOrCreate);
+            this.NumeFisier = NumeFisier;
+            Stream streamFisierText = File.Open(NumeFisier, FileMode.OpenOrCreate);
             streamFisierText.Close();
         }
 
