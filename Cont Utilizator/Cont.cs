@@ -76,9 +76,9 @@ namespace Cont_Utilizator
             suma = new float[vectorSumaDupaSplit.Length];
 
             int nrSuma = 0;
-            foreach (string nota in vectorSumaDupaSplit)
+            foreach (string sum in vectorSumaDupaSplit)
             {
-                bool rezultatConversie = float.TryParse(nota, out suma[nrSuma]);
+                bool rezultatConversie = float.TryParse(sum, out suma[nrSuma]);
                 if (rezultatConversie == SUCCES && ValideazaSuma(suma[nrSuma]) == SUCCES)
                 {
                     nrSuma++;

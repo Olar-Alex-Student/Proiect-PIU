@@ -12,18 +12,18 @@ namespace Nivel_Stocare_Date
     public class AdministrareVenit_FisierText
     {
         private const int NR_MAX_CONTURI = 50;
-        private string numeFisier;
+        private string NumeFisier;
 
-        public AdministrareVenit_FisierText(string numeFisier)
+        public AdministrareVenit_FisierText(string NumeFisier)
         {
-            this.numeFisier = numeFisier;
-            Stream streamFisierText = File.Open(numeFisier, FileMode.OpenOrCreate);
+            this.NumeFisier = NumeFisier;
+            Stream streamFisierText = File.Open(NumeFisier, FileMode.OpenOrCreate);
             streamFisierText.Close();
         }
 
         public void AddCont(Cont cont)
         {
-            using (StreamWriter streamWriterFisierText = new StreamWriter(numeFisier, true))
+            using (StreamWriter streamWriterFisierText = new StreamWriter(NumeFisier, true))
             {
                 streamWriterFisierText.WriteLine(cont.ConversieLaSir_PentruFisier());
             }
@@ -33,7 +33,7 @@ namespace Nivel_Stocare_Date
         {
             Cont[] conturi = new Cont[NR_MAX_CONTURI];
 
-            using (StreamReader streamReader = new StreamReader(numeFisier))
+            using (StreamReader streamReader = new StreamReader(NumeFisier))
             {
                 string linieFisier;
                 nrConturi = 0;

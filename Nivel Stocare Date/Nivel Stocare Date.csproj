@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Cont Utilizator\Cont Utilizator.csproj">
-      <Project>{964DEB2A-34D3-4E9F-BA2E-DFDDFD483913}</Project>
+      <Project>{964deb2a-34d3-4e9f-ba2e-dfddfd483913}</Project>
       <Name>Cont Utilizator</Name>
     </ProjectReference>
   </ItemGroup>
