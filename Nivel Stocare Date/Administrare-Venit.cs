@@ -11,6 +11,10 @@ namespace Nivel_Stocare_Date
 {
     public class AdministrareVenit_FisierText
     {
+        private const int ID_PRIMUL_CONT = 1;
+        private const int INCREMENT = 1;
+
+
         private const int NR_MAX_CONTURI = 50;
         private string NumeFisier;
 
@@ -23,6 +27,8 @@ namespace Nivel_Stocare_Date
 
         public void AddCont(Cont cont)
         {
+            cont.IdCont = GetId();
+
             using (StreamWriter streamWriterFisierText = new StreamWriter(NumeFisier, true))
             {
                 streamWriterFisierText.WriteLine(cont.ConversieLaSir_PentruFisier());
@@ -45,6 +51,25 @@ namespace Nivel_Stocare_Date
             }
 
             return conturi;
-        }  
+        }
+
+        private int GetId()
+        {
+            int IdCont = ID_PRIMUL_CONT;
+
+            using (StreamReader streamReader = new StreamReader(NumeFisier))
+            {
+                string linieFisier;
+
+                //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
+                while ((linieFisier = streamReader.ReadLine()) != null)
+                {
+                    Cont cont =  new Cont(linieFisier);
+                    IdCont = cont.IdCont + INCREMENT;
+                }
+            }
+
+            return IdCont;
+        }
     }
 }
