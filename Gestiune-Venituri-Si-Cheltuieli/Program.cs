@@ -81,10 +81,10 @@ namespace Gestiune_Venituri_Si_Cheltuieli
             Console.WriteLine("Introduceti numele la cont");
             string nume = Console.ReadLine();
 
-            Cont cont = new Cont(0, nume);
-
             Console.WriteLine("Introduceti suma din cont");
             string suma = Console.ReadLine();
+
+            Cont cont = new Cont(0, nume, 0);
             cont.SetSumaCont(suma);
 
             return cont;
@@ -92,7 +92,8 @@ namespace Gestiune_Venituri_Si_Cheltuieli
 
         public static void AfisareCont(Cont cont)
         {
-            string infoCont = string.Format("Contul cu numele: {0} are suma de: {1}",
+            string infoCont = string.Format("Contul cu ID-ul: {0}, cu numele: {1} si suma: {2}",
+                    cont.IdCont,
                     cont.NumeCont ?? " NECUNOSCUT ",
                     string.Join(",", cont.SumaCont));
 

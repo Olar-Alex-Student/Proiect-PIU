@@ -4,3 +4,9 @@ D:\DOWN\Proiect-PIU\Cont Utilizator\obj\Debug\Cont Utilizator.csproj.AssemblyRef
 D:\DOWN\Proiect-PIU\Cont Utilizator\obj\Debug\Cont Utilizator.csproj.CoreCompileInputs.cache
 D:\DOWN\Proiect-PIU\Cont Utilizator\obj\Debug\Cont Utilizator.dll
 D:\DOWN\Proiect-PIU\Cont Utilizator\obj\Debug\Cont Utilizator.pdb
+D:\Proiect-PIU\Cont Utilizator\bin\Debug\Cont Utilizator.dll
+D:\Proiect-PIU\Cont Utilizator\bin\Debug\Cont Utilizator.pdb
+D:\Proiect-PIU\Cont Utilizator\obj\Debug\Cont Utilizator.csproj.AssemblyReference.cache
+D:\Proiect-PIU\Cont Utilizator\obj\Debug\Cont Utilizator.csproj.CoreCompileInputs.cache
+D:\Proiect-PIU\Cont Utilizator\obj\Debug\Cont Utilizator.dll
+D:\Proiect-PIU\Cont Utilizator\obj\Debug\Cont Utilizator.pdb

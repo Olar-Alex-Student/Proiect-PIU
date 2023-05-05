@@ -19,9 +19,11 @@ namespace InterfataUtilizator_WindowsForms
     {
         AdministrareVenit_FisierText adminConturi;
 
+        private Label lblId;
         private Label lblNume;
         private Label lblSuma;
 
+        private Label[] lblsId;
         private Label[] lblsNume;
         private Label[] lblsSuma;
 
@@ -44,19 +46,33 @@ namespace InterfataUtilizator_WindowsForms
             this.ForeColor = Color.LimeGreen;
             this.Text = "Informatii Conturi";
 
-            lblNume = new Label();
-            lblNume.Width = LATIME_CONTROL;
-            lblNume.Text = "Nume";
-            lblNume.Left = DIMENSIUNE_PAS_X;
-            lblNume.ForeColor = Color.DarkGreen;
-            this.Controls.Add(lblNume);
+            lblId = new Label();
+            lblId.Width = LATIME_CONTROL;
+            lblId.Text = "ID";
+            lblId.Left = DIMENSIUNE_PAS_X;
+            lblId.ForeColor = Color.DarkGreen;
+            this.Controls.Add(lblId);
 
             lblSuma = new Label();
             lblSuma.Width = LATIME_CONTROL;
             lblSuma.Text = "Sume";
-            lblSuma.Left = 3 * DIMENSIUNE_PAS_X;
+            lblSuma.Left = 2 * DIMENSIUNE_PAS_X;
             lblSuma.ForeColor = Color.DarkGreen;
             this.Controls.Add(lblSuma);
+
+            lblNume = new Label();
+            lblNume.Width = LATIME_CONTROL;
+            lblNume.Text = "Nume";
+            lblNume.Left = 3 * DIMENSIUNE_PAS_X;
+            lblNume.ForeColor = Color.DarkGreen;
+            this.Controls.Add(lblNume);
+
+
+            button1.Text = "Adauga";
+            button1.ForeColor = Color.DarkGreen;
+
+            button2.Text = "Refresh";
+            button2.ForeColor = Color.DarkGreen;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -74,21 +90,53 @@ namespace InterfataUtilizator_WindowsForms
             int i = 0;
             foreach (Cont cont in conturi)
             {
+                lblsId[i] = new Label();
+                lblsId[i].Width = LATIME_CONTROL;
+                lblsId[i].Text = cont.NumeCont;
+                lblsId[i].Left = DIMENSIUNE_PAS_X;
+                lblsId[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
+                this.Controls.Add(lblsId[i]);
+
                 lblsNume[i] = new Label();
                 lblsNume[i].Width = LATIME_CONTROL;
                 lblsNume[i].Text = cont.NumeCont;
-                lblsNume[i].Left = DIMENSIUNE_PAS_X;
+                lblsNume[i].Left = 3 * DIMENSIUNE_PAS_X;
                 lblsNume[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
                 this.Controls.Add(lblsNume[i]);
 
                 lblsSuma[i] = new Label();
                 lblsSuma[i].Width = LATIME_CONTROL;
                 lblsSuma[i].Text = string.Join(" ", cont.SumaCont);
-                lblsSuma[i].Left = 3 * DIMENSIUNE_PAS_X;
+                lblsSuma[i].Left = 2 * DIMENSIUNE_PAS_X;
                 lblsSuma[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
                 this.Controls.Add(lblsSuma[i]);
                 i++;
             }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

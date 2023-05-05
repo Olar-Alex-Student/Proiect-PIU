@@ -16,11 +16,19 @@ namespace Cont_Utilizator
 
         private const int SUMACONT = 0;
         private const int NUMECONT = 1;
+        private const int IDCONT = 2;
 
         float[] suma;
 
         private float sumaCont;
         private string numeCont;
+        private int idCont;
+
+        public int IdCont
+        { 
+            get { return idCont; }
+            set { idCont = value; }
+        }
         public float SumaCont 
         { 
           get { return sumaCont; }
@@ -36,12 +44,14 @@ namespace Cont_Utilizator
         {
             sumaCont = 0.0f;
             numeCont = null;
+            idCont = 0;
         }
 
-        public Cont(float sumaCont, string numeCont)
+        public Cont(float sumaCont, string numeCont, int idCont)
         {
             this.sumaCont = sumaCont;
             this.numeCont = numeCont;
+            this.idCont = idCont;
         }
 
         public void AddSumaCont()
@@ -98,9 +108,10 @@ namespace Cont_Utilizator
 
         public string Info()
         {
-            string info = string.Format("Suma Cont:{0} Nume Cont:{1}",
-                sumaCont.ToString(),
-                (numeCont ?? " NECUNOSCUT "));
+            string info = string.Format("Id Cont {0}, Nume Cont {1}, Suma Cont {2}",
+                idCont,
+                (numeCont ?? " NECUNOSCUT "),
+                sumaCont.ToString());
 
             return info;
         }

@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
+    "\\Cont Utilizator",
     "\\Gestiune-Venituri-Si-Cheltuieli",
-    "\\Gestiune-Venituri-Si-Cheltuieli\\obj\\Debug\\TempPE"
+    "\\InterfataUtilizator_WindowsForms",
+    "\\Nivel Stocare Date"
   ],
   "SelectedNode": "\\Gestiune-Venituri-Si-Cheltuieli\\Program.cs",
   "PreviewInSolutionExplorer": false

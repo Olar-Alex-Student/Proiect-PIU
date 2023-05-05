@@ -11,3 +11,16 @@ D:\DOWN\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\bin\Debug\Nivel Stocare Date
 D:\DOWN\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\bin\Debug\Cont Utilizator.pdb
 D:\DOWN\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\bin\Debug\Nivel Stocare Date.pdb
 D:\DOWN\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\obj\Debug\Gestiune-Venituri-Si-Cheltuieli.csproj.CopyComplete
+D:\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\bin\Debug\Gestiune-Venituri-Si-Cheltuieli.exe.config
+D:\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\bin\Debug\Gestiune-Venituri-Si-Cheltuieli.exe
+D:\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\bin\Debug\Gestiune-Venituri-Si-Cheltuieli.pdb
+D:\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\bin\Debug\Cont Utilizator.dll
+D:\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\bin\Debug\Nivel Stocare Date.dll
+D:\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\bin\Debug\Cont Utilizator.pdb
+D:\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\bin\Debug\Nivel Stocare Date.pdb
+D:\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\obj\Debug\Gestiune-Venituri-Si-Cheltuieli.csproj.AssemblyReference.cache
+D:\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\obj\Debug\Gestiune-Venituri-Si-Cheltuieli.csproj.SuggestedBindingRedirects.cache
+D:\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\obj\Debug\Gestiune-Venituri-Si-Cheltuieli.csproj.CoreCompileInputs.cache
+D:\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\obj\Debug\Gestiune-Venituri-Si-Cheltuieli.csproj.CopyComplete
+D:\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\obj\Debug\Gestiune-Venituri-Si-Cheltuieli.exe
+D:\Proiect-PIU\Gestiune-Venituri-Si-Cheltuieli\obj\Debug\Gestiune-Venituri-Si-Cheltuieli.pdb
