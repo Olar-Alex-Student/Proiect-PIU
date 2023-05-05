@@ -9,19 +9,18 @@ using System.Threading.Tasks;
 
 namespace Nivel_Stocare_Date
 {
-    public class AdministrareVenit_FisierText
+    public class AdministrareConturi_FisierText
     {
         private const int ID_PRIMUL_CONT = 1;
         private const int INCREMENT = 1;
 
+        private const int NR_MAX_CONTURI = 150;
+        private string numeFisier;
 
-        private const int NR_MAX_CONTURI = 50;
-        private string NumeFisier;
-
-        public AdministrareVenit_FisierText(string NumeFisier)
+        public AdministrareConturi_FisierText(string numeFisier)
         {
-            this.NumeFisier = NumeFisier;
-            Stream streamFisierText = File.Open(NumeFisier, FileMode.OpenOrCreate);
+            this.numeFisier = numeFisier;
+            Stream streamFisierText = File.Open(numeFisier, FileMode.OpenOrCreate);
             streamFisierText.Close();
         }
 
@@ -29,7 +28,7 @@ namespace Nivel_Stocare_Date
         {
             cont.IdCont = GetId();
 
-            using (StreamWriter streamWriterFisierText = new StreamWriter(NumeFisier, true))
+            using (StreamWriter streamWriterFisierText = new StreamWriter(numeFisier, true))
             {
                 streamWriterFisierText.WriteLine(cont.ConversieLaSir_PentruFisier());
             }
@@ -39,7 +38,7 @@ namespace Nivel_Stocare_Date
         {
             Cont[] conturi = new Cont[NR_MAX_CONTURI];
 
-            using (StreamReader streamReader = new StreamReader(NumeFisier))
+            using (StreamReader streamReader = new StreamReader(numeFisier))
             {
                 string linieFisier;
                 nrConturi = 0;
@@ -50,21 +49,21 @@ namespace Nivel_Stocare_Date
                 }
             }
 
+            Array.Resize(ref conturi, nrConturi);
+
             return conturi;
         }
-
         private int GetId()
         {
             int IdCont = ID_PRIMUL_CONT;
 
-            using (StreamReader streamReader = new StreamReader(NumeFisier))
+            using (StreamReader streamReader = new StreamReader(numeFisier))
             {
                 string linieFisier;
 
-                //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
                 while ((linieFisier = streamReader.ReadLine()) != null)
                 {
-                    Cont cont =  new Cont(linieFisier);
+                    Cont cont = new Cont(linieFisier);
                     IdCont = cont.IdCont + INCREMENT;
                 }
             }

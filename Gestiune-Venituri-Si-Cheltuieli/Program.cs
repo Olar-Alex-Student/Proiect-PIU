@@ -1,17 +1,8 @@
 ﻿using Cont_Utilizator;
-
 using Nivel_Stocare_Date;
-
 using System;
-using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
-
-using static System.Net.Mime.MediaTypeNames;
 
 namespace Gestiune_Venituri_Si_Cheltuieli
 {
@@ -21,48 +12,47 @@ namespace Gestiune_Venituri_Si_Cheltuieli
         static void Main(string[] args)
         {
             Cont cont = new Cont();
-            string NumeFisier = ConfigurationManager.AppSettings["NumeFisier"];
-            AdministrareVenit_FisierText adminConturi = new AdministrareVenit_FisierText(NumeFisier);
+            string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
+            string locatieFisierSolutie = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            string caleCompletaFisier = locatieFisierSolutie + "\\" + numeFisier;
+
+            AdministrareConturi_FisierText adminConturi = new AdministrareConturi_FisierText(caleCompletaFisier);
             int nrConturi = 0;
             adminConturi.GetConturi(out nrConturi);
 
             string optiune;
-
-            do 
+            do
             {
-                Console.WriteLine("I. Introdu informatii cont");
-                Console.WriteLine("A. Afisare ultimul cont introdus");
-                Console.WriteLine("V. Adauga venit la suma din cont");
-                Console.WriteLine("C. Cheltuieste din suma din cont");
-                Console.WriteLine("F. Afisati conturi din fisier");
-                Console.WriteLine("S. Salveaza cont in fisier");
+                Console.WriteLine("I. Introducere informatii cont");
+                Console.WriteLine("A. Afisarea ultimului cont introdus");
+                Console.WriteLine("F. Afisare cont din fisier");
+                Console.WriteLine("S. Salvare cont in fisier");
                 Console.WriteLine("X. Inchidere program");
                 Console.WriteLine("Alegeti o optiune");
-
                 optiune = Console.ReadLine();
-
                 switch (optiune.ToUpper())
                 {
                     case "I":
                         cont = CitireStudentTastatura();
+
                         break;
                     case "A":
                         AfisareCont(cont);
-                        break;
-                    case "S":
-                        adminConturi.AddCont(cont);
 
-                        nrConturi = nrConturi + 1;
                         break;
                     case "F":
                         Cont[] conturi = adminConturi.GetConturi(out nrConturi);
-                        AfisareConturi(conturi, nrConturi);
+                        AfisareStudenti(conturi, nrConturi);
+
                         break;
-                    case "V":
-                        cont.AddSumaCont();
-                        break;
-                    case "C":
-                        cont.SubSumaCont();
+                    case "S":
+                        int idCont = nrConturi + 1;
+                        cont.IdCont = idCont;
+                        //adaugare student in fisier
+                        adminConturi.AddCont(cont);
+
+                        nrConturi = nrConturi + 1;
+
                         break;
                     case "X":
                         return;
@@ -70,43 +60,42 @@ namespace Gestiune_Venituri_Si_Cheltuieli
                         Console.WriteLine("Optiune inexistenta");
                         break;
                 }
-            }
-            while (optiune.ToUpper() != "X");
+            } while (optiune.ToUpper() != "X");
 
             Console.ReadKey();
         }
 
-        public static Cont CitireStudentTastatura()
-        {
-            Console.WriteLine("Introduceti numele la cont");
-            string nume = Console.ReadLine();
-
-            Console.WriteLine("Introduceti suma din cont");
-            string suma = Console.ReadLine();
-
-            Cont cont = new Cont(0, nume, 0);
-            cont.SetSumaCont(suma);
-
-            return cont;
-        }
-
         public static void AfisareCont(Cont cont)
         {
-            string infoCont = string.Format("Contul cu ID-ul: {0}, cu numele: {1} si suma: {2}",
+            string infoCont = string.Format("Contul cu id-ul #{0} are numele: {1} si sumele: {2}",
                     cont.IdCont,
                     cont.NumeCont ?? " NECUNOSCUT ",
-                    string.Join(",", cont.SumaCont));
+                    string.Join(",", cont.GetSume()));
 
             Console.WriteLine(infoCont);
         }
 
-        public static void AfisareConturi(Cont[] conturi, int nrConturi)
+        public static void AfisareStudenti(Cont[] conturi, int nrConturi)
         {
             Console.WriteLine("Conturile sunt:");
             for (int contor = 0; contor < nrConturi; contor++)
             {
                 AfisareCont(conturi[contor]);
             }
+        }
+
+        public static Cont CitireStudentTastatura()
+        {
+            Console.WriteLine("Introduceti numele contului");
+            string nume = Console.ReadLine();
+
+            Cont cont = new Cont(0, nume);
+
+            Console.WriteLine("Introduceti sumele");
+            string sume = Console.ReadLine();
+            cont.SetSume(sume);
+
+            return cont;
         }
     }
 }

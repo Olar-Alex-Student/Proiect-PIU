@@ -11,66 +11,94 @@ namespace Cont_Utilizator
         private const char SEPARATOR_PRINCIPAL_FISIER = ';';
         private const char SEPARATOR_SECUNDAR_FISIER = ' ';
         private const bool SUCCES = true;
-        public const float SUMA_MINIMA = -999999999;
-        public const float SUMA_MAXIMA = 999999999;
+        public const int SUMA_MINIMA = 0;
+        public const int SUMA_MAXIMA = 99999999;
 
-        private const int SUMACONT = 0;
+        private const int IDCONT = 0;
         private const int NUMECONT = 1;
-        private const int IDCONT = 2;
+        private const int SUMECONT = 2;
 
-        float[] suma;
+        int[] sume;
 
-        private float sumaCont;
-        private string numeCont;
-        private int idCont;
+        public int IdCont { get; set; }
+        public string NumeCont { get; set; }
 
-        public int IdCont
-        { 
-            get { return idCont; }
-            set { idCont = value; }
-        }
-        public float SumaCont 
-        { 
-          get { return sumaCont; }
-          set { sumaCont = value; }
-        }
-        public string NumeCont 
+        public int[] GetSume()
         {
-          get { return numeCont; }
-          set { numeCont = value; }
+            return (int[])sume.Clone();
         }
 
         public Cont()
         {
-            sumaCont = 0.0f;
-            numeCont = null;
-            idCont = 0;
+            NumeCont = string.Empty;
         }
 
-        public Cont(float sumaCont, string numeCont, int idCont)
+        public Cont(int idCont, string numeCont)
         {
-            this.sumaCont = sumaCont;
-            this.numeCont = numeCont;
-            this.idCont = idCont;
+            this.IdCont = idCont;
+            this.NumeCont = numeCont;
         }
 
-        public void AddSumaCont()
+        public Cont(string linieFisier)
         {
-            Console.WriteLine("Scrie valoarea pe care vrei sa o adaugi in cont:");
-            string text = Console.ReadLine();
-            float add = float.Parse(text);
-            SumaCont += add;
+            string[] dateFisier = linieFisier.Split(SEPARATOR_PRINCIPAL_FISIER);
+
+            IdCont = Convert.ToInt32(dateFisier[IDCONT]);
+            NumeCont = dateFisier[NUMECONT];
+            SetSume(dateFisier[SUMECONT], SEPARATOR_SECUNDAR_FISIER);
         }
 
-        public void SubSumaCont()
+        public string Info()
         {
-            Console.WriteLine("Scrie valoarea pe care vrei sa o cheltui din cont:");
-            string text = Console.ReadLine();
-            float sub = float.Parse(text);
-            SumaCont -= sub;
+            string info = string.Format("Id Cont:{0} Nume Cont:{1}",
+                IdCont.ToString(),
+                (NumeCont ?? " NECUNOSCUT "));
+
+            return info;
         }
 
-        private bool ValideazaSuma(float suma)
+        public string ConversieLaSir_PentruFisier()
+        {
+            string sSume = string.Empty;
+            if (sume != null)
+            {
+                sSume = string.Join(SEPARATOR_SECUNDAR_FISIER.ToString(), sume);
+            }
+
+            string obiectContPentruFisier = string.Format("{1}{0}{2}{0}{3}",
+                SEPARATOR_PRINCIPAL_FISIER,
+                IdCont.ToString(),
+                (NumeCont ?? " NECUNOSCUT "),
+                sSume);
+
+            return obiectContPentruFisier;
+        }
+
+        public void SetSume(string sirSume, char delimitator = ' ')
+        {
+            string[] vectorSumeDupaSplit = sirSume.Split(delimitator);
+            sume = new int[vectorSumeDupaSplit.Length];
+
+            int nrSume = 0;
+            foreach (string nota in vectorSumeDupaSplit)
+            {
+                bool rezultatConversie = Int32.TryParse(nota, out sume[nrSume]);
+                if (rezultatConversie == SUCCES && ValideazaSuma(sume[nrSume]) == SUCCES)
+                {
+                    nrSume++;
+                }
+            }
+
+            Array.Resize(ref sume, nrSume);
+        }
+
+        public void SetSume(int[] _sume)
+        {
+            sume = new int[_sume.Length];
+            _sume.CopyTo(sume, 0);
+        }
+
+        private bool ValideazaSuma(int suma)
         {
             if (suma >= SUMA_MINIMA && suma <= SUMA_MAXIMA)
             {
@@ -78,58 +106,6 @@ namespace Cont_Utilizator
             }
 
             return false;
-        }
-
-        public void SetSumaCont(string sirSuma, char delimitator = ' ')
-        {
-            string[] vectorSumaDupaSplit = sirSuma.Split(delimitator);
-            suma = new float[vectorSumaDupaSplit.Length];
-
-            int nrSuma = 0;
-            foreach (string sum in vectorSumaDupaSplit)
-            {
-                bool rezultatConversie = float.TryParse(sum, out suma[nrSuma]);
-                if (rezultatConversie == SUCCES && ValideazaSuma(suma[nrSuma]) == SUCCES)
-                {
-                    nrSuma++;
-                }
-            }
-
-            Array.Resize(ref suma, nrSuma);
-        }
-
-        public Cont(string linieFisier)
-        {
-            string[] dateFisier = linieFisier.Split(SEPARATOR_PRINCIPAL_FISIER);
-
-            numeCont = dateFisier[NUMECONT];
-            SetSumaCont(dateFisier[SUMACONT], SEPARATOR_SECUNDAR_FISIER);
-        }
-
-        public string Info()
-        {
-            string info = string.Format("Id Cont {0}, Nume Cont {1}, Suma Cont {2}",
-                idCont,
-                (numeCont ?? " NECUNOSCUT "),
-                sumaCont.ToString());
-
-            return info;
-        }
-
-        public string ConversieLaSir_PentruFisier()
-        {
-            string sSumaCont = string.Empty;
-            if (sumaCont != 0.0f)
-            {
-                sSumaCont = string.Join(SEPARATOR_SECUNDAR_FISIER.ToString(), sumaCont);
-            }
-
-            string obiectStudentPentruFisier = string.Format("{1}{0}{2}",
-                SEPARATOR_PRINCIPAL_FISIER,
-                (numeCont ?? " NECUNOSCUT "),
-                sSumaCont);
-
-            return obiectStudentPentruFisier;
         }
     }
 }

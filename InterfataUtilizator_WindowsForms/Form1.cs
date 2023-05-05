@@ -17,7 +17,7 @@ namespace InterfataUtilizator_WindowsForms
 {
     public partial class Form1 : Form
     {
-        AdministrareVenit_FisierText adminConturi;
+        AdministrareConturi_FisierText adminConturi;
 
         private Label lblId;
         private Label lblNume;
@@ -35,7 +35,7 @@ namespace InterfataUtilizator_WindowsForms
             string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
             string locatieFisierSolutie = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
             string caleCompletaFisier = locatieFisierSolutie + "\\" + numeFisier;
-            adminConturi = new AdministrareVenit_FisierText(caleCompletaFisier);
+            adminConturi = new AdministrareConturi_FisierText(caleCompletaFisier);
 
             InitializeComponent();
 
@@ -106,7 +106,7 @@ namespace InterfataUtilizator_WindowsForms
 
                 lblsSuma[i] = new Label();
                 lblsSuma[i].Width = LATIME_CONTROL;
-                lblsSuma[i].Text = string.Join(" ", cont.SumaCont);
+                lblsSuma[i].Text = string.Join(" ", cont.GetSume());
                 lblsSuma[i].Left = 2 * DIMENSIUNE_PAS_X;
                 lblsSuma[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
                 this.Controls.Add(lblsSuma[i]);
