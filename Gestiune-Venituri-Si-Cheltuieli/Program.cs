@@ -27,6 +27,10 @@ namespace Gestiune_Venituri_Si_Cheltuieli
                 Console.WriteLine("A. Afisarea ultimului cont introdus");
                 Console.WriteLine("F. Afisare cont din fisier");
                 Console.WriteLine("S. Salvare cont in fisier");
+                Console.WriteLine("+. Adauga la o suma din cont curent");
+                Console.WriteLine("-. Scade de la o suma din cont curent");
+                Console.WriteLine("+F. Adauga la o suma din cont curent");
+                Console.WriteLine("-F. Scade de la o suma din cont curent");
                 Console.WriteLine("X. Inchidere program");
                 Console.WriteLine("Alegeti o optiune");
                 optiune = Console.ReadLine();
@@ -53,6 +57,20 @@ namespace Gestiune_Venituri_Si_Cheltuieli
 
                         nrConturi = nrConturi + 1;
 
+                        break;
+                    case "+":
+                        AdaugaCurent(cont);
+                        break;
+                    case "-":
+                        ScadeCurent(cont);
+                        break;
+                    case "+F":
+                        Cont[] conturi1 = adminConturi.GetConturi(out nrConturi);
+                        AdaugaFisier(conturi1);
+                        break;
+                    case "-F":
+                        Cont[] conturi2 = adminConturi.GetConturi(out nrConturi);
+                        ScadeFisier(conturi2);
                         break;
                     case "X":
                         return;
@@ -96,6 +114,69 @@ namespace Gestiune_Venituri_Si_Cheltuieli
             cont.SetSume(sume);
 
             return cont;
+        }
+
+        public static void AdaugaCurent(Cont cont)
+        {
+            Console.WriteLine("Scrie Suma pe care vrei sa o adaugi:");
+            string add = Console.ReadLine();
+            int _add = Int32.Parse(add);
+
+            Console.WriteLine("Scrie Contul la care vrei sa se adauge:");
+            string index = Console.ReadLine();
+            int _index = Int32.Parse(index);
+
+            cont.AdaugaLaSuma(_add, _index);
+
+
+        }
+
+        public static void ScadeCurent(Cont cont)
+        {
+            Console.WriteLine("Scrie Suma pe care vrei sa o scazi:");
+            string sub = Console.ReadLine();
+            int _sub = Int32.Parse(sub);
+
+            Console.WriteLine("Scrie Contul la care vrei sa se scada:");
+            string index = Console.ReadLine();
+            int _index = Int32.Parse(index);
+
+            cont.ScadeDeLaSuma(_sub, _index);
+        }
+
+        public static void AdaugaFisier(Cont[] conturi)
+        {
+            Console.WriteLine("Scrie ID-ul contului:");
+            string id = Console.ReadLine();
+            int _id = Int32.Parse(id);
+
+            Console.WriteLine("Scrie Suma pe care vrei sa o adaugi:");
+            string add = Console.ReadLine();
+            int _add = Int32.Parse(add);
+
+            Console.WriteLine("Scrie nr. Sumei la care vrei sa se adauge:");
+            string index = Console.ReadLine();
+            int _index = Int32.Parse(index);
+
+            conturi[_id-1].AdaugaLaSuma(_add, _index);
+
+
+        }
+        public static void ScadeFisier(Cont[] conturi)
+        {
+            Console.WriteLine("Scrie ID-ul contului:");
+            string id = Console.ReadLine();
+            int _id = Int32.Parse(id);
+
+            Console.WriteLine("Scrie Suma pe care vrei sa o scazi:");
+            string sub = Console.ReadLine();
+            int _sub = Int32.Parse(sub);
+
+            Console.WriteLine("Scrie nr. Sumei la care vrei sa se scada:");
+            string index = Console.ReadLine();
+            int _index = Int32.Parse(index);
+
+            conturi[_id].ScadeDeLaSuma(_sub, _index);
         }
     }
 }
