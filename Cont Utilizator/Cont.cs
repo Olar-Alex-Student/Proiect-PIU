@@ -48,6 +48,16 @@ namespace Cont_Utilizator
             SetSume(dateFisier[SUMECONT], SEPARATOR_SECUNDAR_FISIER);
         }
 
+        public void AdaugaLaSuma(int _add, int index)
+        {
+            sume[index - 1] += _add;
+        }
+
+        public void ScadeDeLaSuma(int _sub, int index)
+        {
+            sume[index - 1] -= _sub;
+        }
+
         public string Info()
         {
             string info = string.Format("Id Cont:{0} Nume Cont:{1}",
