@@ -19,13 +19,11 @@ namespace InterfataUtilizator_WindowsForms
     {
         AdministrareConturi_FisierText adminConturi;
 
-        private Label lblId;
-        private Label lblNume;
-        private Label lblSuma;
+        private Label lblNumeCont;
+        private Label lblSumeCont;
 
-        private Label[] lblsId;
-        private Label[] lblsNume;
-        private Label[] lblsSuma;
+        private Label[] lblsNumeCont;
+        private Label[] lblsSumeCont;
 
         private const int LATIME_CONTROL = 100;
         private const int DIMENSIUNE_PAS_Y = 30;
@@ -44,35 +42,21 @@ namespace InterfataUtilizator_WindowsForms
             this.Location = new Point(100, 100);
             this.Font = new Font("Arial", 9, FontStyle.Bold);
             this.ForeColor = Color.LimeGreen;
-            this.Text = "Informatii Conturi";
+            this.Text = "Informatii conturi";
 
-            lblId = new Label();
-            lblId.Width = LATIME_CONTROL;
-            lblId.Text = "ID";
-            lblId.Left = DIMENSIUNE_PAS_X;
-            lblId.ForeColor = Color.DarkGreen;
-            this.Controls.Add(lblId);
+            lblNumeCont = new Label();
+            lblNumeCont.Width = LATIME_CONTROL;
+            lblNumeCont.Text = "Nume";
+            lblNumeCont.Left = DIMENSIUNE_PAS_X;
+            lblNumeCont.ForeColor = Color.DarkGreen;
+            this.Controls.Add(lblNumeCont);
 
-            lblSuma = new Label();
-            lblSuma.Width = LATIME_CONTROL;
-            lblSuma.Text = "Sume";
-            lblSuma.Left = 2 * DIMENSIUNE_PAS_X;
-            lblSuma.ForeColor = Color.DarkGreen;
-            this.Controls.Add(lblSuma);
-
-            lblNume = new Label();
-            lblNume.Width = LATIME_CONTROL;
-            lblNume.Text = "Nume";
-            lblNume.Left = 3 * DIMENSIUNE_PAS_X;
-            lblNume.ForeColor = Color.DarkGreen;
-            this.Controls.Add(lblNume);
-
-
-            button1.Text = "Adauga";
-            button1.ForeColor = Color.DarkGreen;
-
-            button2.Text = "Refresh";
-            button2.ForeColor = Color.DarkGreen;
+            lblSumeCont = new Label();
+            lblSumeCont.Width = LATIME_CONTROL;
+            lblSumeCont.Text = "Sume";
+            lblSumeCont.Left = 2 * DIMENSIUNE_PAS_X;
+            lblSumeCont.ForeColor = Color.DarkGreen;
+            this.Controls.Add(lblSumeCont);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -84,32 +68,25 @@ namespace InterfataUtilizator_WindowsForms
         {
             Cont[] conturi = adminConturi.GetConturi(out int nrConturi);
 
-            lblsNume = new Label[nrConturi];
-            lblsSuma = new Label[nrConturi];
+            lblsNumeCont = new Label[nrConturi];
+            lblsSumeCont = new Label[nrConturi];
 
             int i = 0;
             foreach (Cont cont in conturi)
             {
-                lblsId[i] = new Label();
-                lblsId[i].Width = LATIME_CONTROL;
-                lblsId[i].Text = cont.NumeCont;
-                lblsId[i].Left = DIMENSIUNE_PAS_X;
-                lblsId[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
-                this.Controls.Add(lblsId[i]);
+                lblsNumeCont[i] = new Label();
+                lblsNumeCont[i].Width = LATIME_CONTROL;
+                lblsNumeCont[i].Text = cont.NumeCont;
+                lblsNumeCont[i].Left = DIMENSIUNE_PAS_X;
+                lblsNumeCont[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
+                this.Controls.Add(lblsNumeCont[i]);
 
-                lblsNume[i] = new Label();
-                lblsNume[i].Width = LATIME_CONTROL;
-                lblsNume[i].Text = cont.NumeCont;
-                lblsNume[i].Left = 3 * DIMENSIUNE_PAS_X;
-                lblsNume[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
-                this.Controls.Add(lblsNume[i]);
-
-                lblsSuma[i] = new Label();
-                lblsSuma[i].Width = LATIME_CONTROL;
-                lblsSuma[i].Text = string.Join(" ", cont.GetSume());
-                lblsSuma[i].Left = 2 * DIMENSIUNE_PAS_X;
-                lblsSuma[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
-                this.Controls.Add(lblsSuma[i]);
+                lblsSumeCont[i] = new Label();
+                lblsSumeCont[i].Width = LATIME_CONTROL;
+                lblsSumeCont[i].Text = string.Join(" ", cont.GetSume());
+                lblsSumeCont[i].Left = 3 * DIMENSIUNE_PAS_X;
+                lblsSumeCont[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
+                this.Controls.Add(lblsSumeCont[i]);
                 i++;
             }
         }
