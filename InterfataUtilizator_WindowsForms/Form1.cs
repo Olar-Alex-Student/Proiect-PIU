@@ -8,9 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Cont_Utilizator;
 using Nivel_Stocare_Date;
 using System.Configuration;
-using Cont_Utilizator;
 using System.IO;
 
 namespace InterfataUtilizator_WindowsForms
@@ -19,9 +19,11 @@ namespace InterfataUtilizator_WindowsForms
     {
         AdministrareConturi_FisierText adminConturi;
 
+        private Label lblIdCont;
         private Label lblNumeCont;
         private Label lblSumeCont;
 
+        private Label[] lblsIdCont;
         private Label[] lblsNumeCont;
         private Label[] lblsSumeCont;
 
@@ -33,7 +35,12 @@ namespace InterfataUtilizator_WindowsForms
             string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
             string locatieFisierSolutie = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
             string caleCompletaFisier = locatieFisierSolutie + "\\" + numeFisier;
-            adminConturi = new AdministrareConturi_FisierText(caleCompletaFisier);
+            AdministrareConturi_FisierText adminConturi = new AdministrareConturi_FisierText(caleCompletaFisier);
+
+            Cont cont = new Cont();
+
+            int nrConturi = 0;
+            adminConturi.GetConturi(out nrConturi);
 
             InitializeComponent();
 
@@ -44,18 +51,25 @@ namespace InterfataUtilizator_WindowsForms
             this.ForeColor = Color.LimeGreen;
             this.Text = "Informatii conturi";
 
+            lblIdCont = new Label();
+            lblIdCont.Width = LATIME_CONTROL;
+            lblIdCont.Text = "ID";
+            lblIdCont.Left = DIMENSIUNE_PAS_X;
+            lblIdCont.ForeColor = Color.Coral;
+            this.Controls.Add(lblIdCont);
+
             lblNumeCont = new Label();
             lblNumeCont.Width = LATIME_CONTROL;
             lblNumeCont.Text = "Nume";
-            lblNumeCont.Left = DIMENSIUNE_PAS_X;
-            lblNumeCont.ForeColor = Color.DarkGreen;
+            lblNumeCont.Left = 2 * DIMENSIUNE_PAS_X;
+            lblNumeCont.ForeColor = Color.Coral;
             this.Controls.Add(lblNumeCont);
 
             lblSumeCont = new Label();
             lblSumeCont.Width = LATIME_CONTROL;
             lblSumeCont.Text = "Sume";
-            lblSumeCont.Left = 2 * DIMENSIUNE_PAS_X;
-            lblSumeCont.ForeColor = Color.DarkGreen;
+            lblSumeCont.Left = 3 * DIMENSIUNE_PAS_X;
+            lblSumeCont.ForeColor = Color.Coral;
             this.Controls.Add(lblSumeCont);
         }
 
@@ -74,10 +88,17 @@ namespace InterfataUtilizator_WindowsForms
             int i = 0;
             foreach (Cont cont in conturi)
             {
+                lblsIdCont[i] = new Label();
+                lblsIdCont[i].Width = LATIME_CONTROL;
+                lblsIdCont[i].Text = string.Join(" ", cont.IdCont);
+                lblsIdCont[i].Left =  DIMENSIUNE_PAS_X;
+                lblsIdCont[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
+                this.Controls.Add(lblsIdCont[i]);
+
                 lblsNumeCont[i] = new Label();
                 lblsNumeCont[i].Width = LATIME_CONTROL;
                 lblsNumeCont[i].Text = cont.NumeCont;
-                lblsNumeCont[i].Left = DIMENSIUNE_PAS_X;
+                lblsNumeCont[i].Left = 2 * DIMENSIUNE_PAS_X;
                 lblsNumeCont[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
                 this.Controls.Add(lblsNumeCont[i]);
 
@@ -93,27 +114,22 @@ namespace InterfataUtilizator_WindowsForms
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            // Modificare nume cont nou
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            // Adauga cont nou in fisier
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            // Afiseaza din nou conturile din fisier
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
+            // Sumele din contul nou
         }
     }
 }

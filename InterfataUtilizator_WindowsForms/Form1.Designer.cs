@@ -1,4 +1,7 @@
-﻿namespace InterfataUtilizator_WindowsForms
+﻿using Cont_Utilizator;
+using System;
+
+namespace InterfataUtilizator_WindowsForms
 {
     partial class Form1
     {
@@ -36,6 +39,7 @@
             // 
             // textBox1
             // 
+            this.textBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
@@ -44,19 +48,22 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.SystemColors.Control;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(12, 68);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 30);
             this.button1.TabIndex = 1;
             this.button1.Text = "Adauga";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 97);
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(12, 104);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 25);
+            this.button2.Size = new System.Drawing.Size(100, 30);
             this.button2.TabIndex = 2;
             this.button2.Text = "Refresh";
             this.button2.UseVisualStyleBackColor = true;
@@ -64,6 +71,7 @@
             // 
             // textBox2
             // 
+            this.textBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBox2.Location = new System.Drawing.Point(12, 40);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 22);
