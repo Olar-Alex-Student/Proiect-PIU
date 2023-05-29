@@ -32,8 +32,9 @@ namespace InterfataUtilizator_WindowsForms
         private Label[] lblsContPt;
 
         private const int LATIME_CONTROL = 100;
-        private const int DIMENSIUNE_PAS_Y = 18;
+        private const int DIMENSIUNE_PAS_Y = 10;
         private const int DIMENSIUNE_PAS_X = 220;
+        private const int OFFSET_X = 600;
         public Form1()
         {
             string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
@@ -105,6 +106,46 @@ namespace InterfataUtilizator_WindowsForms
         {
             Cont[] conturi = adminConturi.GetConturi(out int nrConturi);
 
+            lblIdCont = new Label();
+            lblIdCont.Width = LATIME_CONTROL;
+            lblIdCont.Text = "ID";
+            lblIdCont.Top = DIMENSIUNE_PAS_Y;
+            lblIdCont.Left = OFFSET_X + 0;
+            lblIdCont.ForeColor = Color.Black;
+            this.Controls.Add(lblIdCont);
+
+            lblNumeCont = new Label();
+            lblNumeCont.Width = LATIME_CONTROL;
+            lblNumeCont.Text = "Nume";
+            lblNumeCont.Top = DIMENSIUNE_PAS_Y;
+            lblNumeCont.Left = OFFSET_X + 2 * DIMENSIUNE_PAS_X;
+            lblNumeCont.ForeColor = Color.Black;
+            this.Controls.Add(lblNumeCont);
+
+            lblSumeCont = new Label();
+            lblSumeCont.Width = LATIME_CONTROL;
+            lblSumeCont.Text = "Sume";
+            lblSumeCont.Top = DIMENSIUNE_PAS_Y;
+            lblSumeCont.Left = OFFSET_X + 3 * DIMENSIUNE_PAS_X;
+            lblSumeCont.ForeColor = Color.Black;
+            this.Controls.Add(lblSumeCont);
+
+            lblTipCont = new Label();
+            lblTipCont.Width = LATIME_CONTROL;
+            lblTipCont.Text = "Tip Cont";
+            lblTipCont.Top = DIMENSIUNE_PAS_Y;
+            lblTipCont.Left = OFFSET_X + 4 * DIMENSIUNE_PAS_X;
+            lblTipCont.ForeColor = Color.Black;
+            this.Controls.Add(lblTipCont);
+
+            lblContPt = new Label();
+            lblContPt.Width = LATIME_CONTROL;
+            lblContPt.Text = "Pentru";
+            lblContPt.Top = DIMENSIUNE_PAS_Y;
+            lblContPt.Left = OFFSET_X + 5 * DIMENSIUNE_PAS_X;
+            lblContPt.ForeColor = Color.Black;
+            this.Controls.Add(lblContPt);
+
             lblsIdCont = new Label[nrConturi];
             lblsNumeCont = new Label[nrConturi];
             lblsSumeCont = new Label[nrConturi];
@@ -114,6 +155,7 @@ namespace InterfataUtilizator_WindowsForms
             int i = 0;
             foreach (Cont cont in conturi)
             {
+                /*
                 lblsIdCont[i] = new Label();
                 lblsIdCont[i].Width = LATIME_CONTROL;
                 lblsIdCont[i].Text = string.Join(" ", cont.IdCont);
@@ -148,6 +190,7 @@ namespace InterfataUtilizator_WindowsForms
                 lblsContPt[i].Left = 5 * DIMENSIUNE_PAS_X;
                 lblsContPt[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
                 this.Controls.Add(lblsContPt[i]);
+                */
                 i++;
             }
         }
