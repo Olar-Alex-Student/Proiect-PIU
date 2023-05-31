@@ -1,1 +1,3 @@
-
+1;123;Venit;123;Salar
+2;-123;Cheltuieli;123;Chirie
+3;0;Venit;123;Tips

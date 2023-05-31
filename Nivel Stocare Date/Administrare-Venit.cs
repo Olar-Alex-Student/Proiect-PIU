@@ -4,19 +4,20 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Nivel_Stocare_Date
 {
-    public class AdministrareConturi_FisierText : IStocareData
+    public class AdministrareCont_FisierText : IStocareData
     {
         private const int ID_PRIMA_MODIFICARE = 1;
         private const int INCREMENT = 1;
 
         private string numeFisier;
 
-        public AdministrareConturi_FisierText(string numeFisier)
+        public AdministrareCont_FisierText(string numeFisier)
         {
             this.numeFisier = numeFisier;
             // se incearca deschiderea fisierului in modul OpenOrCreate
@@ -25,9 +26,9 @@ namespace Nivel_Stocare_Date
             streamFisierText.Close();
         }
 
-        public void AddCont(Cont cont)
+        public void AddModificare(Cont cont)
         {
-            cont.Id = GetId();
+            cont.IdCont = GetId();
 
             // instructiunea 'using' va apela la final streamWriterFisierText.Close();
             // al doilea parametru setat la 'true' al constructorului StreamWriter indica
@@ -38,7 +39,7 @@ namespace Nivel_Stocare_Date
             }
         }
 
-        public List<Cont> GetModificari()
+        public List<Cont> GetGestiune()
         {
             List<Cont> modificari = new List<Cont>();
 
@@ -59,7 +60,7 @@ namespace Nivel_Stocare_Date
             return modificari;
         }
 
-        public Cont GetCont(string tip)
+        public Cont GetModifiacre(int sumaIntrodusa)
         {
             // instructiunea 'using' va apela streamReader.Close()
             using (StreamReader streamReader = new StreamReader(numeFisier))
@@ -71,7 +72,7 @@ namespace Nivel_Stocare_Date
                 while ((linieFisier = streamReader.ReadLine()) != null)
                 {
                     Cont cont = new Cont(linieFisier);
-                    if (cont.Tip.Equals(tip))
+                    if (cont.SumaIntrodusa == sumaIntrodusa)
                         return cont;
                 }
             }
@@ -79,7 +80,7 @@ namespace Nivel_Stocare_Date
             return null;
         }
 
-        public Cont GetCont(int id)
+        public Cont GetModificare(int idCont)
         {
             // instructiunea 'using' va apela streamReader.Close()
             using (StreamReader streamReader = new StreamReader(numeFisier))
@@ -90,8 +91,8 @@ namespace Nivel_Stocare_Date
                 // pe baza datelor din linia citita
                 while ((linieFisier = streamReader.ReadLine()) != null)
                 {
-                    Cont cont = new Cont(linieFisier);
-                    if (cont.Id == id)
+                    Cont cont= new Cont(linieFisier);
+                    if (cont.IdCont == idCont)
                         return cont;
                 }
             }
@@ -99,9 +100,9 @@ namespace Nivel_Stocare_Date
             return null;
         }
 
-        public bool UpdateCont(Cont contActualizat)
+        public bool UpdateModificare(Cont modificareActualizata)
         {
-            List<Cont> modificari = GetModificari();
+            List<Cont> modificari = GetGestiune();
             bool actualizareCuSucces = false;
 
             //instructiunea 'using' va apela la final swFisierText.Close();
@@ -110,13 +111,13 @@ namespace Nivel_Stocare_Date
             {
                 foreach (Cont cont in modificari)
                 {
-                    Cont contPentruScrisInFisier = cont;
+                    Cont modificarePentruScrisInFisier = cont;
                     //informatiile despre studentul actualizat vor fi preluate din parametrul "studentActualizat"
-                    if (cont.Id == contActualizat.Id)
+                    if (cont.IdCont == modificareActualizata.IdCont)
                     {
-                        contPentruScrisInFisier = contActualizat;
+                        modificarePentruScrisInFisier = modificareActualizata;
                     }
-                    streamWriterFisierText.WriteLine(contPentruScrisInFisier.ConversieLaSir_PentruFisier());
+                    streamWriterFisierText.WriteLine(modificarePentruScrisInFisier.ConversieLaSir_PentruFisier());
                 }
                 actualizareCuSucces = true;
             }
@@ -137,7 +138,7 @@ namespace Nivel_Stocare_Date
                 while ((linieFisier = streamReader.ReadLine()) != null)
                 {
                     Cont cont = new Cont(linieFisier);
-                    IdCont = cont.Id + INCREMENT;
+                    IdCont = cont.IdCont + INCREMENT;
                 }
             }
 
