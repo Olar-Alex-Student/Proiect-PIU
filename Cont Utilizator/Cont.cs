@@ -11,7 +11,8 @@ namespace Cont_Utilizator
     public enum EnumVenitCheltuieli
     {
         Cheltuieli  = 0,
-        Venit = 1
+        Venit = 1,
+        Necunoscut = 2
     }
 
     [Serializable]
@@ -65,6 +66,7 @@ namespace Cont_Utilizator
 
         }
 
+        //inforamtii despre cont minime
         public string Info()
         {
             string info = string.Format("Id: {0} Suma: {1}",
@@ -74,24 +76,27 @@ namespace Cont_Utilizator
             return info;
         }
 
+        //transformarea valorilor intr-un sirt pt. fisier text
         public string ConversieLaSir_PentruFisier()
         {
             string obiectContPentruFisier = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}",
                 SEPARATOR_PRINCIPAL_FISIER,
                 IdCont.ToString(),
                 SumaCont.ToString(),
-                Tip,
+                (Tip != EnumVenitCheltuieli.Necunoscut),
                 SumaIntrodusa.ToString(),
                 (Detalii ?? "Necunoscut"));
 
             return obiectContPentruFisier;
         }
-
+        
+        //transformarea datelor in tip string
         public override string ToString()
         {
             return ConversieLaSir_PentruFisier();
         }
 
+        //Validarea unei sume
         public bool ValideazaSuma(int suma)
         {
             if (suma >= SUMA_MINIMA && suma <= SUMA_MAXIMA)

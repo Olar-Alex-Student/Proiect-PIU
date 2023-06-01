@@ -48,7 +48,7 @@ namespace Nivel_Stocare_Date
             {
                 string linieFisier;
 
-                // citeste cate o linie si creaza un obiect de tip Student
+                // citeste cate o linie si creaza un obiect de tip Modificare
                 // pe baza datelor din linia citita
                 while ((linieFisier = streamReader.ReadLine()) != null)
                 {
@@ -67,7 +67,7 @@ namespace Nivel_Stocare_Date
             {
                 string linieFisier;
 
-                // citeste cate o linie si creaza un obiect de tip Student
+                // citeste cate o linie si creaza un obiect de tip Modificare
                 // pe baza datelor din linia citita
                 while ((linieFisier = streamReader.ReadLine()) != null)
                 {
@@ -87,7 +87,7 @@ namespace Nivel_Stocare_Date
             {
                 string linieFisier;
 
-                // citeste cate o linie si creaza un obiect de tip Student
+                // citeste cate o linie si creaza un obiect de tip Modificare
                 // pe baza datelor din linia citita
                 while ((linieFisier = streamReader.ReadLine()) != null)
                 {
@@ -96,7 +96,6 @@ namespace Nivel_Stocare_Date
                         return cont;
                 }
             }
-
             return null;
         }
 
@@ -112,7 +111,7 @@ namespace Nivel_Stocare_Date
                 foreach (Cont cont in modificari)
                 {
                     Cont modificarePentruScrisInFisier = cont;
-                    //informatiile despre studentul actualizat vor fi preluate din parametrul "studentActualizat"
+                    //informatiile despre studentul actualizat vor fi preluate din parametrul "modificareActualizata"
                     if (cont.IdCont == modificareActualizata.IdCont)
                     {
                         modificarePentruScrisInFisier = modificareActualizata;
@@ -134,7 +133,7 @@ namespace Nivel_Stocare_Date
             {
                 string linieFisier;
 
-                //citeste cate o linie si creaza un obiect de tip Student pe baza datelor din linia citita
+                //citeste cate o linie si creaza un obiect de tip Cont pe baza datelor din linia citita
                 while ((linieFisier = streamReader.ReadLine()) != null)
                 {
                     Cont cont = new Cont(linieFisier);

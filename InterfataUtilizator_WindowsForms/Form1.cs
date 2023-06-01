@@ -12,187 +12,236 @@ using Cont_Utilizator;
 using Nivel_Stocare_Date;
 using System.Configuration;
 using System.IO;
+using System.Collections;
 
 namespace InterfataUtilizator_WindowsForms
 {
     public partial class Form1 : Form
     {
-        AdministrareConturi_FisierText adminConturi;
+        IStocareData adminModificari;
 
-        private Label lblIdCont;
-        private Label lblNumeCont;
-        private Label lblSumeCont;
-        private Label lblTipCont;
-        private Label lblContPt;
+        private Label lblHeaderSumaCont;
+        private Label lblHeaderTip;
+        private Label lblHeaderSumaIntrodusa;
 
-        private Label[] lblsIdCont;
-        private Label[] lblsNumeCont;
-        private Label[] lblsSumeCont;
-        private Label[] lblsTipCont;
-        private Label[] lblsContPt;
+        private Label[] lblsSumaCont;
+        private Label[] lblsTip;
+        private Label[] lblsSumaIntrodusa;
 
         private const int LATIME_CONTROL = 100;
-        private const int DIMENSIUNE_PAS_Y = 10;
-        private const int DIMENSIUNE_PAS_X = 220;
+        private const int DIMENSIUNE_PAS_Y = 30;
+        private const int DIMENSIUNE_PAS_X = 120;
         private const int OFFSET_X = 600;
+
+        //ArrayList disciplineSelectate = new ArrayList();
+
         public Form1()
         {
-            string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
-            string locatieFisierSolutie = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
-            string caleCompletaFisier = locatieFisierSolutie + "\\" + numeFisier;
-            AdministrareConturi_FisierText adminConturi = new AdministrareConturi_FisierText(caleCompletaFisier);
 
-            Cont cont = new Cont();
-
-            int nrConturi = 0;
-            adminConturi.GetConturi(out nrConturi);
+            //adminStudenti = StocareFactory.GetAdministratorStocare();
 
             InitializeComponent();
 
-            //this.Size = new Size(1920, 1080);
+            //setare proprietati
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(0, 0);
-            this.Font = new Font("Arial", 12, FontStyle.Bold);
+            this.Font = new Font("Arial", 9, FontStyle.Bold);
             this.ForeColor = Color.Black;
-            this.Text = "Informatii conturi";
+            this.Text = "Informatii Cont";
 
-            lblIdCont = new Label();
-            lblIdCont.Width = LATIME_CONTROL;
-            lblIdCont.Text = "ID";
-            lblIdCont.Top = DIMENSIUNE_PAS_Y;
-            lblIdCont.Left = DIMENSIUNE_PAS_X;
-            lblIdCont.ForeColor = Color.Black;
-            this.Controls.Add(lblIdCont);
+            List<Cont> modificari = adminModificari.GetGestiune();
 
-            lblNumeCont = new Label();
-            lblNumeCont.Width = LATIME_CONTROL;
-            lblNumeCont.Text = "Nume";
-            lblNumeCont.Top = DIMENSIUNE_PAS_Y;
-            lblNumeCont.Left = 2 * DIMENSIUNE_PAS_X;
-            lblNumeCont.ForeColor = Color.Black;
-            this.Controls.Add(lblNumeCont);
-
-            lblSumeCont = new Label();
-            lblSumeCont.Width = LATIME_CONTROL;
-            lblSumeCont.Text = "Sume";
-            lblSumeCont.Top = DIMENSIUNE_PAS_Y;
-            lblSumeCont.Left = 3 * DIMENSIUNE_PAS_X;
-            lblSumeCont.ForeColor = Color.Black;
-            this.Controls.Add(lblSumeCont);
-
-            lblTipCont = new Label();
-            lblTipCont.Width = LATIME_CONTROL;
-            lblTipCont.Text = "Tip Cont";
-            lblTipCont.Top = DIMENSIUNE_PAS_Y;
-            lblTipCont.Left = 4 * DIMENSIUNE_PAS_X;
-            lblTipCont.ForeColor = Color.Black;
-            this.Controls.Add(lblTipCont);
-
-            lblContPt = new Label();
-            lblContPt.Width = LATIME_CONTROL;
-            lblContPt.Text = "Pentru";
-            lblContPt.Top = DIMENSIUNE_PAS_Y;
-            lblContPt.Left = 5 * DIMENSIUNE_PAS_X;
-            lblContPt.ForeColor = Color.Black;
-            this.Controls.Add(lblContPt);
+            AfiseazaModificari(modificari);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            AfiseazaConturi();
+            List<Cont> modificari = adminModificari.GetGestiune();
+
+            AfiseazaModificari(modificari);
         }
 
-        private void AfiseazaConturi()
+        private void AfiseazaModificari(List<Cont> modificari)
         {
-            Cont[] conturi = adminConturi.GetConturi(out int nrConturi);
+            //adaugare control de tip Label pentru 'Nume';
+            lblHeaderSumaCont = new Label();
+            lblHeaderSumaCont.Width = LATIME_CONTROL;
+            lblHeaderSumaCont.Text = "Suma Cont";
+            lblHeaderSumaCont.Left = OFFSET_X + 0;
+            lblHeaderSumaCont.ForeColor = Color.DarkGreen;
+            this.Controls.Add(lblHeaderSumaCont);
 
-            lblIdCont = new Label();
-            lblIdCont.Width = LATIME_CONTROL;
-            lblIdCont.Text = "ID";
-            lblIdCont.Top = DIMENSIUNE_PAS_Y;
-            lblIdCont.Left = OFFSET_X + 0;
-            lblIdCont.ForeColor = Color.Black;
-            this.Controls.Add(lblIdCont);
+            //adaugare control de tip Label pentru 'Prenume';
+            lblHeaderTip = new Label();
+            lblHeaderTip.Width = LATIME_CONTROL;
+            lblHeaderTip.Text = "Tip";
+            lblHeaderTip.Left = OFFSET_X + DIMENSIUNE_PAS_X;
+            lblHeaderTip.ForeColor = Color.DarkGreen;
+            this.Controls.Add(lblHeaderTip);
 
-            lblNumeCont = new Label();
-            lblNumeCont.Width = LATIME_CONTROL;
-            lblNumeCont.Text = "Nume";
-            lblNumeCont.Top = DIMENSIUNE_PAS_Y;
-            lblNumeCont.Left = OFFSET_X + 2 * DIMENSIUNE_PAS_X;
-            lblNumeCont.ForeColor = Color.Black;
-            this.Controls.Add(lblNumeCont);
+            //adaugare control de tip Label pentru 'Note';
+            lblHeaderSumaIntrodusa = new Label();
+            lblHeaderSumaIntrodusa.Width = LATIME_CONTROL;
+            lblHeaderSumaIntrodusa.Text = "Suma Introdusa";
+            lblHeaderSumaIntrodusa.Left = OFFSET_X + 2 * DIMENSIUNE_PAS_X;
+            lblHeaderSumaIntrodusa.ForeColor = Color.DarkGreen;
+            this.Controls.Add(lblHeaderSumaIntrodusa);
 
-            lblSumeCont = new Label();
-            lblSumeCont.Width = LATIME_CONTROL;
-            lblSumeCont.Text = "Sume";
-            lblSumeCont.Top = DIMENSIUNE_PAS_Y;
-            lblSumeCont.Left = OFFSET_X + 3 * DIMENSIUNE_PAS_X;
-            lblSumeCont.ForeColor = Color.Black;
-            this.Controls.Add(lblSumeCont);
-
-            lblTipCont = new Label();
-            lblTipCont.Width = LATIME_CONTROL;
-            lblTipCont.Text = "Tip Cont";
-            lblTipCont.Top = DIMENSIUNE_PAS_Y;
-            lblTipCont.Left = OFFSET_X + 4 * DIMENSIUNE_PAS_X;
-            lblTipCont.ForeColor = Color.Black;
-            this.Controls.Add(lblTipCont);
-
-            lblContPt = new Label();
-            lblContPt.Width = LATIME_CONTROL;
-            lblContPt.Text = "Pentru";
-            lblContPt.Top = DIMENSIUNE_PAS_Y;
-            lblContPt.Left = OFFSET_X + 5 * DIMENSIUNE_PAS_X;
-            lblContPt.ForeColor = Color.Black;
-            this.Controls.Add(lblContPt);
-
-            lblsIdCont = new Label[nrConturi];
-            lblsNumeCont = new Label[nrConturi];
-            lblsSumeCont = new Label[nrConturi];
-            lblsTipCont = new Label[nrConturi];
-            lblsContPt = new Label[nrConturi];
+            int nrModificari = modificari.Count;
+            lblsSumaCont = new Label[nrModificari];
+            lblsTip = new Label[nrModificari];
+            lblsSumaIntrodusa = new Label[nrModificari];
 
             int i = 0;
-            foreach (Cont cont in conturi)
+            foreach (Cont cont in modificari)
             {
-                /*
-                lblsIdCont[i] = new Label();
-                lblsIdCont[i].Width = LATIME_CONTROL;
-                lblsIdCont[i].Text = string.Join(" ", cont.IdCont);
-                lblsIdCont[i].Left =  DIMENSIUNE_PAS_X;
-                lblsIdCont[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
-                this.Controls.Add(lblsIdCont[i]);
+                //adaugare control de tip Label pentru numele studentilor;
+                lblsSumaCont[i] = new Label();
+                lblsSumaCont[i].Width = LATIME_CONTROL;
+                lblsSumaCont[i].Text = cont.SumaCont.ToString();
+                lblsSumaCont[i].Left = OFFSET_X + 0;
+                lblsSumaCont[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
+                this.Controls.Add(lblsSumaCont[i]);
 
-                lblsNumeCont[i] = new Label();
-                lblsNumeCont[i].Width = LATIME_CONTROL;
-                lblsNumeCont[i].Text = cont.NumeCont;
-                lblsNumeCont[i].Left = 2 * DIMENSIUNE_PAS_X;
-                lblsNumeCont[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
-                this.Controls.Add(lblsNumeCont[i]);
+                //adaugare control de tip Label pentru prenumele studentilor
+                lblsTip[i] = new Label();
+                lblsTip[i].Width = LATIME_CONTROL;
+                lblsTip[i].Text = cont.Tip.ToString();
+                lblsTip[i].Left = OFFSET_X + DIMENSIUNE_PAS_X;
+                lblsTip[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
+                this.Controls.Add(lblsTip[i]);
 
-                lblsSumeCont[i] = new Label();
-                lblsSumeCont[i].Width = LATIME_CONTROL;
-                lblsSumeCont[i].Text = string.Join(" ", cont.GetSume());
-                lblsSumeCont[i].Left = 3 * DIMENSIUNE_PAS_X;
-                lblsSumeCont[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
-                this.Controls.Add(lblsSumeCont[i]);
-
-                lblsTipCont[i] = new Label();
-                lblsTipCont[i].Width = LATIME_CONTROL;
-                lblsTipCont[i].Text = string.Join(" ", cont.GetSume());
-                lblsTipCont[i].Left = 4 * DIMENSIUNE_PAS_X;
-                lblsTipCont[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
-                this.Controls.Add(lblsTipCont[i]);
-
-                lblsContPt[i] = new Label();
-                lblsContPt[i].Width = LATIME_CONTROL;
-                lblsContPt[i].Text = string.Join(" ", cont.GetSume());
-                lblsContPt[i].Left = 5 * DIMENSIUNE_PAS_X;
-                lblsContPt[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
-                this.Controls.Add(lblsContPt[i]);
-                */
+                //adaugare control de tip Label pentru notele studentilor
+                lblsSumaIntrodusa[i] = new Label();
+                lblsSumaIntrodusa[i].Width = LATIME_CONTROL;
+                lblsSumaIntrodusa[i].Text = string.Join(" ", cont.SumaIntrodusa.ToString());
+                lblsSumaIntrodusa[i].Left = OFFSET_X + 2 * DIMENSIUNE_PAS_X;
+                lblsSumaIntrodusa[i].Top = (i + 1) * DIMENSIUNE_PAS_Y;
+                this.Controls.Add(lblsSumaIntrodusa[i]);
                 i++;
             }
         }
+        /*
+        private void BtnAdauga_Click(object sender, EventArgs e)
+        {
+            if (!DateIntrareValide())
+            {
+                lblDiscipline.ForeColor = Color.Red;
+                lblNote.ForeColor = Color.Red;
+
+                return;
+            }
+
+            Student s = new Student(0, txtNume.Text, txtPrenume.Text);
+            s.SetNote(txtNote.Text);
+
+            //set program studiu
+            //verificare radioButton selectat
+            ProgramStudiu specializareSelectata = GetProgramStudiuSelectat();
+            s.Specializare = specializareSelectata;
+
+            //set Discipline
+            s.Discipline = new ArrayList();
+            s.Discipline.AddRange(disciplineSelectate);
+
+            adminStudenti.AddStudent(s);
+            lblMesaj.Text = "Studentul a fost adaugat";
+
+            //resetarea controalelor pentru a introduce datele unui student nou
+            ResetareControale();
+        }
+
+        private bool DateIntrareValide()
+        {
+            string[] note = txtNote.Text.Split(' ');
+            if (disciplineSelectate.Count != note.Length)
+            {
+                return false;
+            }
+
+            return true;
+        }
+
+        private void CkbDiscipline_CheckedChanged(object sender, EventArgs e)
+        {
+            CheckBox checkBoxControl = sender as CheckBox; //operator 'as'
+            //sau
+            //CheckBox checkBoxControl = (CheckBox)sender;  //operator cast
+
+            string disciplinaSelectata = checkBoxControl.Text;
+
+            //verificare daca checkbox-ul asupra caruia s-a actionat este selectat
+            if (checkBoxControl.Checked == true)
+                disciplineSelectate.Add(disciplinaSelectata);
+            else
+                disciplineSelectate.Remove(disciplinaSelectata);
+        }
+
+        private void ResetareControale()
+        {
+            txtNume.Text = txtPrenume.Text = txtNote.Text = string.Empty;
+
+            rdbCalculatoare.Checked = false;
+            rdbAutomatica.Checked = false;
+            rdbElectronica.Checked = false;
+
+            ckbPCLP.Checked = false;
+            ckbPOO.Checked = false;
+            ckbPIU.Checked = false;
+
+            disciplineSelectate.Clear();
+            lblMesaj.Text = string.Empty;
+        }
+
+        private ProgramStudiu GetProgramStudiuSelectat()
+        {
+            if (rdbCalculatoare.Checked)
+                return ProgramStudiu.Calculatoare;
+            if (rdbAutomatica.Checked)
+                return ProgramStudiu.Automatica;
+            if (rdbElectronica.Checked)
+                return ProgramStudiu.Electronica;
+
+            return ProgramStudiu.Calculatoare;
+        }
+        
+
+        private void BtnAfiseaza_Click(object sender, EventArgs e)
+        {
+            List<Cont> modificari = adminModificari.GetGestiune();
+            AfiseazaModificari(modificari);
+            AfisareStudentiInControlListbox(modificari);
+            AfisareStudentiInControlDataGridView(modificari);
+        }
+
+        private void AfisareStudentiInControlListbox(List<Cont> modificari)
+        {
+            lstAfisare.Items.Clear();
+            foreach (Cont cont in modificari)
+            {
+                //pentru a adauga un obiect de tip Student in colectia de Items a unui control de tip ListBox, 
+                // clasa Student trebuie sa implementeze metoda ToString() specificand cuvantul cheie 'override' in definitie
+                //pentru a arata ca metoda ToString a clasei de baza (Object) este suprascrisa
+                lstAfisare.Items.Add(cont);
+
+                //personalizare sursa de date
+                //lstAfisare.Items.Add(s.NumeComplet);
+            }
+        }
+
+        private void AfisareStudentiInControlDataGridView(List<Cont> modificari)
+        {
+            //reset continut control DataGridView
+            dataGridModificari.DataSource = null;
+
+            //!!!! Controlul de tip DataGridView are ca sursa de date lista de obiecte de tip Student !!!
+            dataGridModificari.DataSource = modificari;
+
+            // personalizare sursa de date
+            // dataGridStudenti.DataSource = studenti.Select(s => new { s.Id, s.Nume, s.Prenume, 
+            // s.Specializare, Discipline = string.Join(",", s.Discipline), 
+            // Note = string.Join(",", s.GetNote()) } ).ToList();
+        }
+        */
     }
 }

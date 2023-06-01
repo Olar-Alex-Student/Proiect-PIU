@@ -13,7 +13,6 @@ namespace Gestiune_Venituri_Si_Cheltuieli
  
         static void Main(string[] args)
         {
-            Cont cont = new Cont();
             string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
             string locatieFisierSolutie = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
             // setare locatie fisier in directorul corespunzator solutiei
@@ -22,9 +21,11 @@ namespace Gestiune_Venituri_Si_Cheltuieli
 
             AdministrareCont_FisierText adminModificari = new AdministrareCont_FisierText(caleCompletaFisier);
             int nrModificari = 0;
-            // acest apel ajuta la obtinerea numarului de studenti inca de la inceputul executiei
-            // astfel incat o eventuala adaugare sa atribuie un IdStudent corect noului student
+            // acest apel ajuta la obtinerea numarului de modificari inca de la inceputul executiei
+            // astfel incat o eventuala adaugare sa atribuie un IdCont corect noii modificari
             adminModificari.GetGestiune();
+
+            Cont cont = new Cont();
 
             string optiune;
             do
@@ -59,7 +60,7 @@ namespace Gestiune_Venituri_Si_Cheltuieli
                     case "S":
                         int idCont = nrModificari + 1;
                         cont.IdCont = idCont;
-                        //adaugare student in fisier
+                        //adaugare modificare in fisier
                         adminModificari.AddModificare(cont);
 
                         nrModificari = nrModificari + 1;
@@ -75,7 +76,8 @@ namespace Gestiune_Venituri_Si_Cheltuieli
 
             Console.ReadKey();
         }
-
+        
+        //adaugare venit la suma din cont
         public static void AdaugaVenit(Cont cont)
         {
             Console.WriteLine("Introduceti Suma:");
@@ -96,6 +98,8 @@ namespace Gestiune_Venituri_Si_Cheltuieli
                 cont.Detalii = detalii;
             }
         }
+
+        //adaugare cheltuieli la suma din cont
         public static void AdaugaCheltuieli(Cont cont)
         {
             Console.WriteLine("Introduceti Suma:");
@@ -116,9 +120,11 @@ namespace Gestiune_Venituri_Si_Cheltuieli
                 cont.Detalii = detalii;
             }
         }
+
+        //afisare modificare curenta
         public static void AfisareCont(Cont cont)
         {
-            string info = string.Format("Id: {0}, Suma Cont: {4}, Tip: {1}, Suma Introdusa: {2}, Detalii: {3}",
+            string info = string.Format("Suma Cont: {4}, Tip: {1}, Suma Introdusa: {2}, Detalii: {3}",
                 cont.IdCont.ToString(),
                 cont.Tip,
                 cont.SumaIntrodusa.ToString(),
@@ -127,7 +133,8 @@ namespace Gestiune_Venituri_Si_Cheltuieli
 
             Console.WriteLine(info);
         }
-
+        
+        //afisare modificari din fifier
         public static void AfisareModificari(List<Cont> modificari)
         {
             Console.WriteLine("Modificarile sunt:");
