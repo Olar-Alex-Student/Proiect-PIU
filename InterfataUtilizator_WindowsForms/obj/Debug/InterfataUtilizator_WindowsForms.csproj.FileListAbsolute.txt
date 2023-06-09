@@ -36,3 +36,6 @@ D:\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_Wi
 D:\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.csproj.CopyComplete
 D:\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.exe
 D:\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.pdb
+D:\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\aa\InterfataUtilizator_WindowsForms.resources.dll
+D:\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.Form1.aa.resources
+D:\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\aa\InterfataUtilizator_WindowsForms.resources.dll

@@ -28,7 +28,7 @@ namespace Nivel_Stocare_Date
 
         public void AddModificare(Cont cont)
         {
-            cont.IdCont = GetId();
+            cont.IdSuma = GetId();
 
             // instructiunea 'using' va apela la final streamWriterFisierText.Close();
             // al doilea parametru setat la 'true' al constructorului StreamWriter indica
@@ -92,7 +92,7 @@ namespace Nivel_Stocare_Date
                 while ((linieFisier = streamReader.ReadLine()) != null)
                 {
                     Cont cont= new Cont(linieFisier);
-                    if (cont.IdCont == idCont)
+                    if (cont.IdSuma == idCont)
                         return cont;
                 }
             }
@@ -112,7 +112,7 @@ namespace Nivel_Stocare_Date
                 {
                     Cont modificarePentruScrisInFisier = cont;
                     //informatiile despre studentul actualizat vor fi preluate din parametrul "modificareActualizata"
-                    if (cont.IdCont == modificareActualizata.IdCont)
+                    if (cont.IdSuma == modificareActualizata.IdSuma)
                     {
                         modificarePentruScrisInFisier = modificareActualizata;
                     }
@@ -137,7 +137,7 @@ namespace Nivel_Stocare_Date
                 while ((linieFisier = streamReader.ReadLine()) != null)
                 {
                     Cont cont = new Cont(linieFisier);
-                    IdCont = cont.IdCont + INCREMENT;
+                    IdCont = cont.IdSuma + INCREMENT;
                 }
             }
 

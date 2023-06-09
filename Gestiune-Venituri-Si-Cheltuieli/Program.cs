@@ -58,8 +58,8 @@ namespace Gestiune_Venituri_Si_Cheltuieli
 
                         break;
                     case "S":
-                        int idCont = nrModificari + 1;
-                        cont.IdCont = idCont;
+                        int idSuma = nrModificari + 1;
+                        cont.IdSuma = idSuma;
                         //adaugare modificare in fisier
                         adminModificari.AddModificare(cont);
 
@@ -125,7 +125,7 @@ namespace Gestiune_Venituri_Si_Cheltuieli
         public static void AfisareCont(Cont cont)
         {
             string info = string.Format("Suma Cont: {4}, Tip: {1}, Suma Introdusa: {2}, Detalii: {3}",
-                cont.IdCont.ToString(),
+                cont.IdSuma.ToString(),
                 cont.Tip,
                 cont.SumaIntrodusa.ToString(),
                 (cont.Detalii ?? "Necunoscut"),

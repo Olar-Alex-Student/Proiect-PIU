@@ -32,7 +32,7 @@ namespace Cont_Utilizator
         private const int DETALII = 4;
 
         //proprietati auto-implemented
-        public int IdCont { get; set; }
+        public int IdSuma { get; set; }
         public int SumaCont { get; set; }
         public EnumVenitCheltuieli Tip { get; set; }
         public int SumaIntrodusa { get; set; }
@@ -47,7 +47,6 @@ namespace Cont_Utilizator
         //constructor cu parametri
         public Cont(int idCont, int sumaCont)
         {
-            this.IdCont = idCont;
             this.SumaCont = sumaCont;
         }
 
@@ -57,7 +56,7 @@ namespace Cont_Utilizator
             string[] dateFisier = linieFisier.Split(SEPARATOR_PRINCIPAL_FISIER);
 
             //ordinea de preluare a campurilor este data de ordinea in care au fost scrise in fisier prin apelul implicit al metodei ConversieLaSir_PentruFisier()
-            IdCont = int.Parse(dateFisier[ID]);
+            IdSuma = int.Parse(dateFisier[ID]);
             SumaCont = int.Parse(dateFisier[SUMA_CONT]);
             Tip = (EnumVenitCheltuieli)Enum.Parse(typeof(EnumVenitCheltuieli), dateFisier[TIP]);
             SumaIntrodusa = int.Parse(dateFisier[SUMA_INTRODUSA]);
@@ -70,7 +69,7 @@ namespace Cont_Utilizator
         public string Info()
         {
             string info = string.Format("Id: {0} Suma: {1}",
-                IdCont.ToString(),
+                IdSuma.ToString(),
                 SumaCont.ToString());
 
             return info;
@@ -81,7 +80,7 @@ namespace Cont_Utilizator
         {
             string obiectContPentruFisier = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}",
                 SEPARATOR_PRINCIPAL_FISIER,
-                IdCont.ToString(),
+                IdSuma.ToString(),
                 SumaCont.ToString(),
                 (Tip != EnumVenitCheltuieli.Necunoscut),
                 SumaIntrodusa.ToString(),
