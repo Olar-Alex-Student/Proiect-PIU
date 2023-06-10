@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 
 namespace Nivel_Stocare_Date
 {
-    public class AdministrareCont_FisierText : IStocareData
+    public class AdministrareTranzactie_FisierText : IStocareData
     {
         private const int ID_PRIMA_MODIFICARE = 1;
         private const int INCREMENT = 1;
 
         private string numeFisier;
 
-        public AdministrareCont_FisierText(string numeFisier)
+        public AdministrareTranzactie_FisierText(string numeFisier)
         {
             this.numeFisier = numeFisier;
             // se incearca deschiderea fisierului in modul OpenOrCreate
@@ -26,61 +26,61 @@ namespace Nivel_Stocare_Date
             streamFisierText.Close();
         }
 
-        public void AddModificare(Cont cont)
+        public void AddTranzactie(Tranzactie tranzactie)
         {
-            cont.IdSuma = GetId();
+            tranzactie.Id = GetId();
 
             // instructiunea 'using' va apela la final streamWriterFisierText.Close();
             // al doilea parametru setat la 'true' al constructorului StreamWriter indica
             // modul 'append' de deschidere al fisierului
             using (StreamWriter streamWriterFisierText = new StreamWriter(numeFisier, true))
             {
-                streamWriterFisierText.WriteLine(cont.ConversieLaSir_PentruFisier());
+                streamWriterFisierText.WriteLine(tranzactie.ConversieLaSir_PentruFisier());
             }
         }
 
-        public List<Cont> GetGestiune()
+        public List<Tranzactie> GetTranzactii()
         {
-            List<Cont> modificari = new List<Cont>();
+            List<Tranzactie> tranzactii = new List<Tranzactie>();
 
             // instructiunea 'using' va apela streamReader.Close()
             using (StreamReader streamReader = new StreamReader(numeFisier))
             {
                 string linieFisier;
 
-                // citeste cate o linie si creaza un obiect de tip Modificare
+                // citeste cate o linie si creaza un obiect de tip Tranzactie
                 // pe baza datelor din linia citita
                 while ((linieFisier = streamReader.ReadLine()) != null)
                 {
-                    Cont cont = new Cont(linieFisier);
-                    modificari.Add(cont);
+                    Tranzactie tranzactie = new Tranzactie(linieFisier);
+                    tranzactii.Add(tranzactie);
                 }
             }
 
-            return modificari;
+            return tranzactii;
         }
 
-        public Cont GetModifiacre(int sumaIntrodusa)
+        public Tranzactie GetTranzactieCuSuma(int sumaIntrodusa)
         {
             // instructiunea 'using' va apela streamReader.Close()
             using (StreamReader streamReader = new StreamReader(numeFisier))
             {
                 string linieFisier;
 
-                // citeste cate o linie si creaza un obiect de tip Modificare
+                // citeste cate o linie si creaza un obiect de tip Tranzactie
                 // pe baza datelor din linia citita
                 while ((linieFisier = streamReader.ReadLine()) != null)
                 {
-                    Cont cont = new Cont(linieFisier);
-                    if (cont.SumaIntrodusa == sumaIntrodusa)
-                        return cont;
+                    Tranzactie tranzactie = new Tranzactie(linieFisier);
+                    if (tranzactie.SumaIntrodusa == sumaIntrodusa)
+                        return tranzactie;
                 }
             }
 
             return null;
         }
 
-        public Cont GetModificare(int idCont)
+        public Tranzactie GetTranzactieCuId(int id)
         {
             // instructiunea 'using' va apela streamReader.Close()
             using (StreamReader streamReader = new StreamReader(numeFisier))
@@ -91,28 +91,28 @@ namespace Nivel_Stocare_Date
                 // pe baza datelor din linia citita
                 while ((linieFisier = streamReader.ReadLine()) != null)
                 {
-                    Cont cont= new Cont(linieFisier);
-                    if (cont.IdSuma == idCont)
-                        return cont;
+                    Tranzactie tranzactie = new Tranzactie(linieFisier);
+                    if (tranzactie.Id == id)
+                        return tranzactie;
                 }
             }
             return null;
         }
 
-        public bool UpdateModificare(Cont modificareActualizata)
+        public bool UpdateModificare(Tranzactie modificareActualizata)
         {
-            List<Cont> modificari = GetGestiune();
+            List<Tranzactie> tranzactii = GetTranzactii();
             bool actualizareCuSucces = false;
 
             //instructiunea 'using' va apela la final swFisierText.Close();
             //al doilea parametru setat la 'false' al constructorului StreamWriter indica modul 'overwrite' de deschidere al fisierului
             using (StreamWriter streamWriterFisierText = new StreamWriter(numeFisier, false))
             {
-                foreach (Cont cont in modificari)
+                foreach (Tranzactie tranzactie in tranzactii)
                 {
-                    Cont modificarePentruScrisInFisier = cont;
+                    Tranzactie modificarePentruScrisInFisier = tranzactie;
                     //informatiile despre studentul actualizat vor fi preluate din parametrul "modificareActualizata"
-                    if (cont.IdSuma == modificareActualizata.IdSuma)
+                    if (tranzactie.Id == modificareActualizata.Id)
                     {
                         modificarePentruScrisInFisier = modificareActualizata;
                     }
@@ -124,9 +124,9 @@ namespace Nivel_Stocare_Date
             return actualizareCuSucces;
         }
 
-        private int GetId()
+        public int GetId()
         {
-            int IdCont = ID_PRIMA_MODIFICARE;
+            int Id = ID_PRIMA_MODIFICARE;
 
             // instructiunea 'using' va apela sr.Close()
             using (StreamReader streamReader = new StreamReader(numeFisier))
@@ -136,12 +136,12 @@ namespace Nivel_Stocare_Date
                 //citeste cate o linie si creaza un obiect de tip Cont pe baza datelor din linia citita
                 while ((linieFisier = streamReader.ReadLine()) != null)
                 {
-                    Cont cont = new Cont(linieFisier);
-                    IdCont = cont.IdSuma + INCREMENT;
+                    Tranzactie tranzactie = new Tranzactie(linieFisier);
+                    Id = tranzactie.Id + INCREMENT;
                 }
             }
 
-            return IdCont;
+            return Id;
         }
     }
 }

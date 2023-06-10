@@ -8,102 +8,46 @@ using System.Threading.Tasks;
 
 namespace Cont_Utilizator
 {
-    public enum EnumVenitCheltuieli
-    {
-        Cheltuieli  = 0,
-        Venit = 1,
-        Necunoscut = 2
-    }
-
-    [Serializable]
     public class Cont
     {
         //constante
-        private const char SEPARATOR_PRINCIPAL_FISIER = ';';
-        private const char SEPARATOR_SECUNDAR_FISIER = ' ';
-        private const bool SUCCES = true;
         public const int SUMA_MINIMA = 1;
         public const int SUMA_MAXIMA = 999999999;
 
-        private const int ID = 0;
-        private const int SUMA_CONT = 1;
-        private const int TIP = 2;
-        private const int SUMA_INTRODUSA = 3;
-        private const int DETALII = 4;
+        private const int SUMA_CONT = 0;
 
         //proprietati auto-implemented
-        public int IdSuma { get; set; }
-        public int SumaCont { get; set; }
-        public EnumVenitCheltuieli Tip { get; set; }
-        public int SumaIntrodusa { get; set; }
-        public string Detalii { get; set; }
+        public int Suma { get; set; }
 
         //contructor implicit
         public Cont()
         {
-            SumaCont = 0;
+            Suma = 0;
         }
 
         //constructor cu parametri
-        public Cont(int idCont, int sumaCont)
+        public Cont(int sumaCont)
         {
-            this.SumaCont = sumaCont;
-        }
-
-        //constructor cu un singur parametru de tip string care reprezinta o linie dintr-un fisier text
-        public Cont(string linieFisier)
-        {
-            string[] dateFisier = linieFisier.Split(SEPARATOR_PRINCIPAL_FISIER);
-
-            //ordinea de preluare a campurilor este data de ordinea in care au fost scrise in fisier prin apelul implicit al metodei ConversieLaSir_PentruFisier()
-            IdSuma = int.Parse(dateFisier[ID]);
-            SumaCont = int.Parse(dateFisier[SUMA_CONT]);
-            Tip = (EnumVenitCheltuieli)Enum.Parse(typeof(EnumVenitCheltuieli), dateFisier[TIP]);
-            SumaIntrodusa = int.Parse(dateFisier[SUMA_INTRODUSA]);
-
-            Detalii = dateFisier[DETALII];
-
+            this.Suma = sumaCont;
         }
 
         //inforamtii despre cont minime
         public string Info()
         {
-            string info = string.Format("Id: {0} Suma: {1}",
-                IdSuma.ToString(),
-                SumaCont.ToString());
+            string info = string.Format("Suma Cont: {0}",
+                Suma.ToString());
 
             return info;
         }
 
-        //transformarea valorilor intr-un sirt pt. fisier text
-        public string ConversieLaSir_PentruFisier()
+        public void Venit(int venit)
         {
-            string obiectContPentruFisier = string.Format("{1}{0}{2}{0}{3}{0}{4}{0}{5}",
-                SEPARATOR_PRINCIPAL_FISIER,
-                IdSuma.ToString(),
-                SumaCont.ToString(),
-                (Tip != EnumVenitCheltuieli.Necunoscut),
-                SumaIntrodusa.ToString(),
-                (Detalii ?? "Necunoscut"));
-
-            return obiectContPentruFisier;
-        }
-        
-        //transformarea datelor in tip string
-        public override string ToString()
-        {
-            return ConversieLaSir_PentruFisier();
+            Suma += venit;
         }
 
-        //Validarea unei sume
-        public bool ValideazaSuma(int suma)
+        public void Cheltuiala(int cheltuiala)
         {
-            if (suma >= SUMA_MINIMA && suma <= SUMA_MAXIMA)
-            {
-                return true;
-            }
-
-            return false;
+            Suma -= cheltuiala;
         }
     }
 }

@@ -118,71 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonSterge.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="groupBoxSumaIntrodusa.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="buttonSterge.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 390</value>
-  </data>
-  <data name="buttonSterge.Size" type="System.Drawing.Size, System.Drawing">
-    <value>611, 51</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="buttonSterge.TabIndex" type="System.Int32, mscorlib">
-    <value>10</value>
-  </data>
-  <data name="buttonSterge.Text" xml:space="preserve">
-    <value>Sterge</value>
-  </data>
-  <data name="&gt;&gt;buttonSterge.Name" xml:space="preserve">
-    <value>buttonSterge</value>
-  </data>
-  <data name="&gt;&gt;buttonSterge.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonSterge.Parent" xml:space="preserve">
-    <value>groupBoxSumaIntrodusa</value>
-  </data>
-  <data name="&gt;&gt;buttonSterge.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="buttonEditeaza.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="buttonEditeaza.Location" type="System.Drawing.Point, System.Drawing">
-    <value>15, 333</value>
-  </data>
-  <data name="buttonEditeaza.Size" type="System.Drawing.Size, System.Drawing">
-    <value>611, 51</value>
-  </data>
-  <data name="buttonEditeaza.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="buttonEditeaza.Text" xml:space="preserve">
-    <value>Editeaza</value>
-  </data>
-  <data name="&gt;&gt;buttonEditeaza.Name" xml:space="preserve">
-    <value>buttonEditeaza</value>
-  </data>
-  <data name="&gt;&gt;buttonEditeaza.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;buttonEditeaza.Parent" xml:space="preserve">
-    <value>groupBoxSumaIntrodusa</value>
-  </data>
-  <data name="&gt;&gt;buttonEditeaza.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="buttonAfiseaza.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="buttonAfiseaza.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="buttonAfiseaza.Location" type="System.Drawing.Point, System.Drawing">
     <value>15, 276</value>
   </data>
   <data name="buttonAfiseaza.Size" type="System.Drawing.Size, System.Drawing">
-    <value>611, 51</value>
+    <value>821, 51</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="buttonAfiseaza.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
@@ -199,13 +151,16 @@
     <value>groupBoxSumaIntrodusa</value>
   </data>
   <data name="&gt;&gt;buttonAfiseaza.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
+  </data>
+  <data name="buttonAdauga.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="buttonAdauga.Location" type="System.Drawing.Point, System.Drawing">
     <value>13, 219</value>
   </data>
   <data name="buttonAdauga.Size" type="System.Drawing.Size, System.Drawing">
-    <value>611, 51</value>
+    <value>823, 51</value>
   </data>
   <data name="buttonAdauga.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -223,40 +178,46 @@
     <value>groupBoxSumaIntrodusa</value>
   </data>
   <data name="&gt;&gt;buttonAdauga.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
-  <data name="labelNaturaSuma.AutoSize" type="System.Boolean, mscorlib">
+  <data name="labelTipSuma.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="labelTipSuma.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="labelNaturaSuma.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="labelTipSuma.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="labelNaturaSuma.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="labelTipSuma.Location" type="System.Drawing.Point, System.Drawing">
     <value>8, 169</value>
   </data>
-  <data name="labelNaturaSuma.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="labelTipSuma.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 0, 4, 0</value>
   </data>
-  <data name="labelNaturaSuma.Size" type="System.Drawing.Size, System.Drawing">
-    <value>140, 28</value>
+  <data name="labelTipSuma.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 28</value>
   </data>
-  <data name="labelNaturaSuma.TabIndex" type="System.Int32, mscorlib">
+  <data name="labelTipSuma.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="labelNaturaSuma.Text" xml:space="preserve">
-    <value>Natura Suma:</value>
+  <data name="labelTipSuma.Text" xml:space="preserve">
+    <value>Tip Suma:</value>
   </data>
-  <data name="&gt;&gt;labelNaturaSuma.Name" xml:space="preserve">
-    <value>labelNaturaSuma</value>
+  <data name="&gt;&gt;labelTipSuma.Name" xml:space="preserve">
+    <value>labelTipSuma</value>
   </data>
-  <data name="&gt;&gt;labelNaturaSuma.Type" xml:space="preserve">
+  <data name="&gt;&gt;labelTipSuma.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;labelNaturaSuma.Parent" xml:space="preserve">
+  <data name="&gt;&gt;labelTipSuma.Parent" xml:space="preserve">
     <value>groupBoxSumaIntrodusa</value>
   </data>
-  <data name="&gt;&gt;labelNaturaSuma.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;labelTipSuma.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="radioButtonCheltuieli.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="radioButtonCheltuieli.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -289,7 +250,10 @@
     <value>groupBoxSumaIntrodusa</value>
   </data>
   <data name="&gt;&gt;radioButtonCheltuieli.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>3</value>
+  </data>
+  <data name="radioButtonVenit.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="radioButtonVenit.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -319,7 +283,10 @@
     <value>groupBoxSumaIntrodusa</value>
   </data>
   <data name="&gt;&gt;radioButtonVenit.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>4</value>
+  </data>
+  <data name="textBoxDetalii.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="textBoxDetalii.Location" type="System.Drawing.Point, System.Drawing">
     <value>162, 85</value>
@@ -328,7 +295,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="textBoxDetalii.Size" type="System.Drawing.Size, System.Drawing">
-    <value>462, 36</value>
+    <value>673, 36</value>
   </data>
   <data name="textBoxDetalii.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -343,7 +310,10 @@
     <value>groupBoxSumaIntrodusa</value>
   </data>
   <data name="&gt;&gt;textBoxDetalii.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>5</value>
+  </data>
+  <data name="labelDetaliiSuma.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="labelDetaliiSuma.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -376,7 +346,10 @@
     <value>groupBoxSumaIntrodusa</value>
   </data>
   <data name="&gt;&gt;labelDetaliiSuma.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>6</value>
+  </data>
+  <data name="numericUpDown1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="numericUpDown1.Location" type="System.Drawing.Point, System.Drawing">
     <value>193, 12</value>
@@ -385,7 +358,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="numericUpDown1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>433, 36</value>
+    <value>642, 36</value>
   </data>
   <data name="numericUpDown1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -400,7 +373,10 @@
     <value>groupBoxSumaIntrodusa</value>
   </data>
   <data name="&gt;&gt;numericUpDown1.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>7</value>
+  </data>
+  <data name="labelSumaIntrodusa.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="labelSumaIntrodusa.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -430,10 +406,10 @@
     <value>groupBoxSumaIntrodusa</value>
   </data>
   <data name="&gt;&gt;labelSumaIntrodusa.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>8</value>
   </data>
   <data name="groupBoxSumaIntrodusa.Location" type="System.Drawing.Point, System.Drawing">
-    <value>16, 15</value>
+    <value>23, 499</value>
   </data>
   <data name="groupBoxSumaIntrodusa.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
@@ -442,7 +418,7 @@
     <value>4, 4, 4, 4</value>
   </data>
   <data name="groupBoxSumaIntrodusa.Size" type="System.Drawing.Size, System.Drawing">
-    <value>658, 467</value>
+    <value>843, 341</value>
   </data>
   <data name="groupBoxSumaIntrodusa.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -457,22 +433,22 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;groupBoxSumaIntrodusa.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
-  <metadata name="contBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
+  <data name="dataGridView1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="dataGridView1.ColumnHeadersHeight" type="System.Int32, mscorlib">
     <value>29</value>
   </data>
   <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>682, 15</value>
+    <value>23, 91</value>
   </data>
   <data name="dataGridView1.RowHeadersWidth" type="System.Int32, mscorlib">
     <value>51</value>
   </data>
   <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>844, 467</value>
+    <value>843, 401</value>
   </data>
   <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -487,40 +463,139 @@
     <value>$this</value>
   </data>
   <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="groupBoxSumaCont.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="label2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label2.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>307, 14</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 28</value>
+  </data>
+  <data name="label2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>Suma Contului:</value>
+  </data>
+  <data name="label2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;label2.Name" xml:space="preserve">
+    <value>label2</value>
+  </data>
+  <data name="&gt;&gt;label2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
+    <value>groupBoxSumaCont</value>
+  </data>
+  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <metadata name="contBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="idSumaDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>IdSuma</value>
+  <data name="labelSumaCont.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="idSumaDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="labelSumaCont.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
-  <data name="sumaContDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>SumaCont</value>
+  <data name="labelSumaCont.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
   </data>
-  <data name="sumaContDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="labelSumaCont.Location" type="System.Drawing.Point, System.Drawing">
+    <value>478, 14</value>
   </data>
-  <data name="tipDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Tip</value>
+  <data name="labelSumaCont.Size" type="System.Drawing.Size, System.Drawing">
+    <value>24, 28</value>
   </data>
-  <data name="tipDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="labelSumaCont.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
-  <data name="sumaIntrodusaDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>SumaIntrodusa</value>
+  <data name="labelSumaCont.Text" xml:space="preserve">
+    <value>0</value>
   </data>
-  <data name="sumaIntrodusaDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="labelSumaCont.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
   </data>
-  <data name="detaliiDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
-    <value>Detalii</value>
+  <data name="&gt;&gt;labelSumaCont.Name" xml:space="preserve">
+    <value>labelSumaCont</value>
   </data>
-  <data name="detaliiDataGridViewTextBoxColumn.MinimumWidth" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="&gt;&gt;labelSumaCont.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelSumaCont.Parent" xml:space="preserve">
+    <value>groupBoxSumaCont</value>
+  </data>
+  <data name="&gt;&gt;labelSumaCont.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label1.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>451, 14</value>
+  </data>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 28</value>
+  </data>
+  <data name="label1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="label1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
+  </data>
+  <data name="&gt;&gt;label1.Name" xml:space="preserve">
+    <value>label1</value>
+  </data>
+  <data name="&gt;&gt;label1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
+    <value>groupBoxSumaCont</value>
+  </data>
+  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupBoxSumaCont.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 28</value>
+  </data>
+  <data name="groupBoxSumaCont.Size" type="System.Drawing.Size, System.Drawing">
+    <value>843, 59</value>
+  </data>
+  <data name="groupBoxSumaCont.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;groupBoxSumaCont.Name" xml:space="preserve">
+    <value>groupBoxSumaCont</value>
+  </data>
+  <data name="&gt;&gt;groupBoxSumaCont.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBoxSumaCont.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;groupBoxSumaCont.ZOrder" xml:space="preserve">
+    <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -528,8 +603,11 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>12, 28</value>
   </data>
+  <data name="$this.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1924, 1055</value>
+    <value>896, 863</value>
   </data>
   <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
     <value>Calibri, 13.8pt, style=Bold</value>
@@ -1669,47 +1747,14 @@
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>6, 7, 6, 7</value>
   </data>
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>20, 20, 20, 20</value>
+  </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Gestiune Venit Si Cheltuieli</value>
-  </data>
-  <data name="&gt;&gt;contBindingSource.Name" xml:space="preserve">
-    <value>contBindingSource</value>
-  </data>
-  <data name="&gt;&gt;contBindingSource.Type" xml:space="preserve">
-    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;idSumaDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>idSumaDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;idSumaDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sumaContDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>sumaContDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;sumaContDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tipDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>tipDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;tipDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sumaIntrodusaDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>sumaIntrodusaDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;sumaIntrodusaDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;detaliiDataGridViewTextBoxColumn.Name" xml:space="preserve">
-    <value>detaliiDataGridViewTextBoxColumn</value>
-  </data>
-  <data name="&gt;&gt;detaliiDataGridViewTextBoxColumn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>Form1</value>

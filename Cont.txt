@@ -1,1 +1,10 @@
-1;0;Necunoscut;123;Necunoscut
+1;5;Venit;Necunoscut
+2;5;Cheltuieli;test
+3;5;Cheltuieli;test
+4;10;Venit;test
+5;7;Cheltuieli;Necunoscut
+6;100;Cheltuieli;Necunoscut
+7;26500;Venit;Salariu itsit
+8;10;Cheltuieli;mondos
+9;1;Cheltuieli;alex
+10;387;Cheltuieli;test

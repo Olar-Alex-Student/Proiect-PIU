@@ -10,9 +10,10 @@ namespace Gestiune_Venituri_Si_Cheltuieli
 {
     internal class Program
     {
- 
+
         static void Main(string[] args)
         {
+            /*
             string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
             string locatieFisierSolutie = Directory.GetParent(System.IO.Directory.GetCurrentDirectory()).Parent.Parent.FullName;
             // setare locatie fisier in directorul corespunzator solutiei
@@ -142,6 +143,8 @@ namespace Gestiune_Venituri_Si_Cheltuieli
             {
                 AfisareCont(modificari[contor]);
             }
+        }
+            */
         }
     }
 }

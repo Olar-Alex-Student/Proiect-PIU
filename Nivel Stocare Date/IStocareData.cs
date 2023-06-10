@@ -11,10 +11,10 @@ namespace Nivel_Stocare_Date
 {
     public interface IStocareData
     {
-        void AddModificare(Cont cont);
-        List<Cont> GetGestiune();
-        Cont GetModifiacre(int sumaIntrodusa);
-        Cont GetModificare(int idCont);
-        bool UpdateModificare(Cont modificareActualizata);
+        void AddTranzactie(Tranzactie tranzactie);
+        List<Tranzactie> GetTranzactii();
+        Tranzactie GetTranzactieCuSuma(int sumaIntrodusa);
+        Tranzactie GetTranzactieCuId(int id);
+        bool UpdateModificare(Tranzactie modificareActualizata);
     }
 }
