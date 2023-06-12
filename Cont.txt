@@ -8,3 +8,5 @@
 8;10;Cheltuieli;mondos
 9;1;Cheltuieli;alex
 10;387;Cheltuieli;test
+11;123;Cheltuieli;test cmd
+12;16;Cheltuieli;cocris

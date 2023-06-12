@@ -10,8 +10,6 @@ namespace Cont_Utilizator
     {
         //constante
         private const char SEPARATOR_PRINCIPAL_FISIER = ';';
-        private const char SEPARATOR_SECUNDAR_FISIER = ' ';
-        private const bool SUCCES = true;
         public const int SUMA_MINIMA = 1;
         public const int SUMA_MAXIMA = 999999999;
 

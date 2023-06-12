@@ -69,6 +69,16 @@ namespace InterfataUtilizator_WindowsForms
 
                 admin.AddTranzactie(tranzactie);
             }
+            if((tranzactie.ValideazaSuma((int)numericUpDown1.Value) == false) || (ValideazaTip() == false))
+            {
+                MessageBox.Show("Date Invalide!");
+
+                radioButtonCheltuieli.Checked = false;
+                radioButtonVenit.Checked = false;
+                numericUpDown1.Value = 0;
+                textBoxDetalii.Text = string.Empty;
+            }
+
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

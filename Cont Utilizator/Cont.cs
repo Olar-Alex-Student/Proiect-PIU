@@ -14,8 +14,6 @@ namespace Cont_Utilizator
         public const int SUMA_MINIMA = 1;
         public const int SUMA_MAXIMA = 999999999;
 
-        private const int SUMA_CONT = 0;
-
         //proprietati auto-implemented
         public int Suma { get; set; }
 
