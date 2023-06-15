@@ -10,3 +10,4 @@
 10;387;Cheltuieli;test
 11;123;Cheltuieli;test cmd
 12;16;Cheltuieli;cocris
+13;123;Venit;Test joi
