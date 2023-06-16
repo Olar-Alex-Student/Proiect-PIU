@@ -17,25 +17,3 @@ D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizat
 D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.csproj.CopyComplete
 D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.exe
 D:\DOWN\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.pdb
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\InterfataUtilizator_WindowsForms.exe.config
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\InterfataUtilizator_WindowsForms.exe
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\InterfataUtilizator_WindowsForms.pdb
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\Cont Utilizator.dll
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\Gestiune-Venituri-Si-Cheltuieli.exe
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\Nivel Stocare Date.dll
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\Cont Utilizator.pdb
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\Gestiune-Venituri-Si-Cheltuieli.pdb
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\Gestiune-Venituri-Si-Cheltuieli.exe.config
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\Nivel Stocare Date.pdb
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.csproj.AssemblyReference.cache
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.csproj.SuggestedBindingRedirects.cache
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.Form1.resources
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.Properties.Resources.resources
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.csproj.GenerateResource.cache
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.csproj.CoreCompileInputs.cache
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.csproj.CopyComplete
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.exe
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.pdb
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\bin\Debug\aa\InterfataUtilizator_WindowsForms.resources.dll
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\InterfataUtilizator_WindowsForms.Form1.aa.resources
-D:\Proiect-PIU\InterfataUtilizator_WindowsForms\obj\Debug\aa\InterfataUtilizator_WindowsForms.resources.dll

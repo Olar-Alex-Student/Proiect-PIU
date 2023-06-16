@@ -7,12 +7,3 @@ D:\DOWN\Proiect-PIU\Nivel Stocare Date\obj\Debug\Nivel Stocare Date.csproj.CoreC
 D:\DOWN\Proiect-PIU\Nivel Stocare Date\obj\Debug\Nivel Stocare Date.csproj.CopyComplete
 D:\DOWN\Proiect-PIU\Nivel Stocare Date\obj\Debug\Nivel Stocare Date.dll
 D:\DOWN\Proiect-PIU\Nivel Stocare Date\obj\Debug\Nivel Stocare Date.pdb
-D:\Proiect-PIU\Nivel Stocare Date\bin\Debug\Nivel Stocare Date.dll
-D:\Proiect-PIU\Nivel Stocare Date\bin\Debug\Nivel Stocare Date.pdb
-D:\Proiect-PIU\Nivel Stocare Date\bin\Debug\Cont Utilizator.dll
-D:\Proiect-PIU\Nivel Stocare Date\bin\Debug\Cont Utilizator.pdb
-D:\Proiect-PIU\Nivel Stocare Date\obj\Debug\Nivel Stocare Date.csproj.AssemblyReference.cache
-D:\Proiect-PIU\Nivel Stocare Date\obj\Debug\Nivel Stocare Date.csproj.CoreCompileInputs.cache
-D:\Proiect-PIU\Nivel Stocare Date\obj\Debug\Nivel Stocare Date.csproj.CopyComplete
-D:\Proiect-PIU\Nivel Stocare Date\obj\Debug\Nivel Stocare Date.dll
-D:\Proiect-PIU\Nivel Stocare Date\obj\Debug\Nivel Stocare Date.pdb

@@ -14,3 +14,5 @@
 14;21;Cheltuieli;test vineri
 15;45;Cheltuieli;Necunoscut
 16;45;Cheltuieli;Necunoscut
+17;123;Cheltuieli;test vineri
+18;26000;Cheltuieli;abc
